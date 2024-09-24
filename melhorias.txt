@@ -1,0 +1,11 @@
+usuarios master ok
+usuarios cod filial 99 com checagem no setor
+visualização para lojas ok
+tela login melhorada ok
+classificação inicial do mais novo para mais velho ok
+filtro de status inicial aberto, em att e em pausa ok
+arrumar home, nao ser fixo?
+formatar data dd/mm/aaaa
+
+ajustar tabela usuarios
+ajustar codigo filial tabelas solicitações

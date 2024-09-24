@@ -1,0 +1,247 @@
+from flask import Flask, render_template, redirect, url_for, request, flash, session
+from flask_mysqldb import MySQL
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
+from flask_wtf.csrf import CSRFProtect
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+import os
+from dotenv import load_dotenv
+import bcrypt
+import logging
+from functools import wraps
+from redis import Redis
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+# Conectar ao Redis
+redis = Redis(host='localhost', port=6379, db=0)
+
+# Configurar Limiter com Redis
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    storage_uri='redis://localhost:6379/0',  # Usa Redis para tracking de limites
+    default_limits=["10 per minute", "30 per hour"]
+)
+
+
+# Configuração de conexão com MySQL usando variáveis de ambiente
+app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
+app.config['MYSQL_PORT'] = int(os.getenv('MYSQL_PORT', 3316))
+app.config['MYSQL_USER'] = os.getenv('MYSQL_USER')
+app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD')
+app.config['MYSQL_DB'] = os.getenv('MYSQL_DB')
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+mysql = MySQL(app)
+
+# Proteção CSRF
+csrf = CSRFProtect(app)
+
+# Configuração de segurança para cookies
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE='Lax'
+)
+
+# Configuração de logs
+logging.basicConfig(filename='app.log', level=logging.WARNING)
+
+
+@app.route('/test_db')
+def test_db_connection():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT 1')
+        cur.close()
+        return 'Conexão com o banco de dados bem-sucedida!'
+    except Exception as e:
+        logging.error(f"Erro de conexão com o banco de dados: {e}")
+        return f"Erro: {e}", 500
+
+
+# Configuração de headers de segurança
+@app.after_request
+def add_security_headers(response):
+    response.headers['Content-Security-Policy'] = (
+        "default-src 'self'; "
+        "style-src 'self' 'https://fonts.googleapis.com'; "
+        "font-src 'self' 'https://fonts.gstatic.com'; "
+        "script-src 'self'; object-src 'none';"
+    )
+    response.headers['X-Frame-Options'] = 'DENY'
+    return response
+
+# Configurar LoginManager
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+# Classe do usuário
+class User(UserMixin):
+    def __init__(self, id, codigo_filial, tipo_user):
+        self.id = id
+        self.codigo_filial = codigo_filial
+        self.tipo_user = tipo_user  # Inclui o tipo de usuário
+
+# Carregar usuário
+@login_manager.user_loader
+def load_user(user_id):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM usuarios WHERE id = %s", [user_id])
+    user_data = cur.fetchone()
+    cur.close()
+
+    if user_data:
+        return User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
+    return None
+
+# Função para verificar se o usuário é administrador
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if current_user.tipo_user != 1:  # tipo_user 1 = administrador
+            flash("Você não tem permissão para acessar essa página.", "danger")
+            return redirect(url_for('home'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Página de login com limite de tentativas
+@app.route('/login', methods=['GET', 'POST'])
+@limiter.limit("5 per minute")  # Limite de tentativas
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM usuarios WHERE username = %s", [username])
+        user_data = cur.fetchone()
+        cur.close()
+
+        if user_data and bcrypt.checkpw(password.encode('utf-8'), user_data['password'].encode('utf-8')):
+            user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
+            login_user(user)
+            return redirect(url_for('home'))
+        else:
+            flash('Login inválido, tente novamente.', 'danger')
+
+    return render_template('login.html')
+
+# Página de logout
+@app.route('/logout', methods=['POST'])
+@login_required
+def logout():
+    session.pop('user_id', None)
+    logout_user()
+    return redirect(url_for('login'))
+
+# Página inicial redirecionando conforme o tipo de usuário e filial
+@app.route('/')
+@login_required
+def home():
+    if current_user.tipo_user == 1:
+        return render_template('index.html')
+    elif current_user.codigo_filial != 99:
+        return render_template('home_lojas.html')
+    else:
+        return render_template('index.html')
+
+# Página protegida após login
+@app.route('/index')
+@login_required
+def index():
+    return render_template('index.html')
+
+# Página de consulta para suporte_chamados
+@app.route('/chamados')
+@login_required
+def chamados():
+    cur = mysql.connection.cursor()
+    if current_user.tipo_user == 1:
+        cur.execute("SELECT * FROM suporte_chamados")
+    else:
+        cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
+    dados = cur.fetchall()
+    cur.close()
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user)
+
+# Página de consulta para infra_chamados
+@app.route('/infra_chamados')
+@login_required
+def infra_chamados():
+    cur = mysql.connection.cursor()
+    if current_user.tipo_user == 1:
+        cur.execute("SELECT * FROM infra_chamados")
+    else:
+        cur.execute("SELECT * FROM infra_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
+    dados = cur.fetchall()
+    cur.close()
+    return render_template('infra_chamados.html', dados=dados)
+
+# Página de consulta para transporte_chamados
+@app.route('/transporte_chamados')
+@login_required
+def transporte_chamados():
+    cur = mysql.connection.cursor()
+    if current_user.tipo_user == 1:
+        cur.execute("SELECT * FROM solicitacoes_transporte")
+    else:
+        cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
+    dados = cur.fetchall()
+    cur.close()
+    return render_template('transporte_chamados.html', dados=dados)
+
+# Página de administração para desbloqueio de usuários/IP
+@app.route('/admin', methods=['GET'])
+@login_required
+@admin_required
+def admin_page():
+    return render_template('admin.html')
+
+# Rota para desbloquear o usuário baseado no ID do MySQL
+@app.route('/unblock_user', methods=['POST'])
+@login_required
+@admin_required
+def unblock_user():
+    user_id = request.form['user_id']
+    
+    # Atualiza o status de bloqueio no MySQL
+    cur = mysql.connection.cursor()
+    cur.execute("UPDATE usuarios SET is_blocked = 0 WHERE id = %s", [user_id])
+    mysql.connection.commit()
+    cur.close()
+
+    flash(f"Usuário com ID {user_id} foi desbloqueado.", "success")
+    return redirect(url_for('admin_page'))
+
+# Rota para desbloquear o IP do usuário
+@app.route('/unblock_ip', methods=['POST'])
+@login_required
+@admin_required
+def unblock_ip():
+    user_ip = request.form['user_ip']
+    
+    # Desbloquear o IP com o Flask-Limiter
+    limiter.clear_limits(user_ip)
+    
+    flash(f"IP {user_ip} foi desbloqueado.", "success")
+    return redirect(url_for('admin_page'))
+
+# Desativar verificação CSRF em algumas rotas
+app.config['WTF_CSRF_CHECK_DEFAULT'] = False
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    # Captura o erro completo e imprime no terminal
+    logging.error(f"Server Error: {traceback.format_exc()}")
+    return render_template("500.html"), 500
