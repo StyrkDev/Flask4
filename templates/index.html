@@ -11,7 +11,7 @@
 
     <div class="logout-container">
         <form action="{{ url_for('logout') }}" method="POST">
-            {{ csrf_token() }} <!-- Proteção CSRF -->
+            {{ form.hidden_tag() }} <!-- Proteção CSRF -->
             <button type="submit" class="logout-button">Logout</button>
         </form>
     </div>
@@ -33,6 +33,11 @@
             </div>
         </section>
     </main>
+
+    <a href="https://wa.me/+554197070185" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 
 </html>

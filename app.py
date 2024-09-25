@@ -10,6 +10,7 @@ import bcrypt
 import logging
 from functools import wraps
 from redis import Redis
+import traceback
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -27,7 +28,6 @@ limiter = Limiter(
     storage_uri='redis://localhost:6379/0',  # Usa Redis para tracking de limites
     default_limits=["10 per minute", "30 per hour"]
 )
-
 
 # Configuração de conexão com MySQL usando variáveis de ambiente
 app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST')
@@ -50,31 +50,6 @@ app.config.update(
 
 # Configuração de logs
 logging.basicConfig(filename='app.log', level=logging.WARNING)
-
-
-@app.route('/test_db')
-def test_db_connection():
-    try:
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT 1')
-        cur.close()
-        return 'Conexão com o banco de dados bem-sucedida!'
-    except Exception as e:
-        logging.error(f"Erro de conexão com o banco de dados: {e}")
-        return f"Erro: {e}", 500
-
-
-# Configuração de headers de segurança
-@app.after_request
-def add_security_headers(response):
-    response.headers['Content-Security-Policy'] = (
-        "default-src 'self'; "
-        "style-src 'self' 'https://fonts.googleapis.com'; "
-        "font-src 'self' 'https://fonts.gstatic.com'; "
-        "script-src 'self'; object-src 'none';"
-    )
-    response.headers['X-Frame-Options'] = 'DENY'
-    return response
 
 # Configurar LoginManager
 login_manager = LoginManager()
@@ -110,6 +85,11 @@ def admin_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+# Função para hashear senhas
+def hash_password(password):
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(password.encode('utf-8'), salt)
+
 # Página de login com limite de tentativas
 @app.route('/login', methods=['GET', 'POST'])
 @limiter.limit("5 per minute")  # Limite de tentativas
@@ -123,12 +103,23 @@ def login():
         user_data = cur.fetchone()
         cur.close()
 
-        if user_data and bcrypt.checkpw(password.encode('utf-8'), user_data['password'].encode('utf-8')):
-            user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
-            login_user(user)
-            return redirect(url_for('home'))
+        if user_data:
+            stored_password = user_data['password']
+
+            # Se stored_password já for bytes, não tente codificá-lo novamente
+            if isinstance(stored_password, str):
+                stored_password = stored_password.encode('utf-8')
+
+            if bcrypt.checkpw(password.encode('utf-8'), stored_password):
+                user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
+                login_user(user)
+                return redirect(url_for('home'))
+            else:
+                logging.warning(f"Senha incorreta para o usuário {username}")
+                flash('Login inválido, tente novamente.', 'danger')
         else:
-            flash('Login inválido, tente novamente.', 'danger')
+            logging.warning(f"Usuário não encontrado: {username}")
+            flash('Usuário não encontrado.', 'danger')
 
     return render_template('login.html')
 
@@ -150,12 +141,6 @@ def home():
         return render_template('home_lojas.html')
     else:
         return render_template('index.html')
-
-# Página protegida após login
-@app.route('/index')
-@login_required
-def index():
-    return render_template('index.html')
 
 # Página de consulta para suporte_chamados
 @app.route('/chamados')
@@ -205,6 +190,7 @@ def admin_page():
 
 # Rota para desbloquear o usuário baseado no ID do MySQL
 @app.route('/unblock_user', methods=['POST'])
+@csrf.exempt
 @login_required
 @admin_required
 def unblock_user():
@@ -221,6 +207,7 @@ def unblock_user():
 
 # Rota para desbloquear o IP do usuário
 @app.route('/unblock_ip', methods=['POST'])
+@csrf.exempt
 @login_required
 @admin_required
 def unblock_ip():
@@ -232,16 +219,24 @@ def unblock_ip():
     flash(f"IP {user_ip} foi desbloqueado.", "success")
     return redirect(url_for('admin_page'))
 
-# Desativar verificação CSRF em algumas rotas
-app.config['WTF_CSRF_CHECK_DEFAULT'] = False
+# Desativar verificação CSRF em algumas rotas específicas
+@app.route('/some_route', methods=['POST'])
+@csrf.exempt
+def some_route():
+    pass
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
-import traceback
-
+# Captura de erros globais
 @app.errorhandler(Exception)
 def handle_exception(e):
     # Captura o erro completo e imprime no terminal
     logging.error(f"Server Error: {traceback.format_exc()}")
     return render_template("500.html"), 500
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html"), 404
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+

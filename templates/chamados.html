@@ -16,7 +16,7 @@
         <!-- Botão de logout no canto superior direito -->
         <div class="logout-container">
             <form action="{{ url_for('logout') }}" method="POST">
-                {{ csrf_token() }} <!-- Proteção CSRF -->
+                {{ form.hidden_tag() }} <!-- Proteção CSRF -->
                 <button type="submit" class="logout-button">Logout</button>
             </form>
         </div>

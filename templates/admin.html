@@ -11,14 +11,14 @@
     <h1>Painel de Administração</h1>
 
     <form action="{{ url_for('unblock_user') }}" method="POST">
-        {{ csrf_token() }} <!-- Proteção CSRF -->
+        {{ form.hidden_tag() }} <!-- Proteção CSRF -->
         <label for="user_id">Digite o ID do usuário:</label>
         <input type="text" id="user_id" name="user_id" required>
         <button type="submit">Desbloquear Usuário</button>
     </form>
 
     <form action="{{ url_for('unblock_ip') }}" method="POST">
-        {{ csrf_token() }} <!-- Proteção CSRF -->
+        {{ form.hidden_tag() }} <!-- Proteção CSRF -->
         <label for="user_ip">Digite o IP do usuário:</label>
         <input type="text" id="user_ip" name="user_ip" required>
         <button type="submit">Desbloquear IP</button>
