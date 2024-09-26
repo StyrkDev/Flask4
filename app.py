@@ -237,11 +237,6 @@ def unblock_ip():
     flash(f"IP {user_ip} foi desbloqueado.", "success")
     return redirect(url_for('admin_page'))
 
-# Desativar verificação CSRF em algumas rotas específicas
-@app.route('/some_route', methods=['POST'])
-@csrf.exempt
-def some_route():
-    pass
 
 # Captura de erros globais
 @app.errorhandler(Exception)

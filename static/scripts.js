@@ -173,3 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function confirmLogout() {
+    if (confirm("Você realmente deseja sair?")) {
+        window.location.href = "{{ url_for('logout') }}";  // Redireciona para a rota de logout
+    }
+}
+
+
