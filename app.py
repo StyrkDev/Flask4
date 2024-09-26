@@ -4,6 +4,8 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 from flask_wtf.csrf import CSRFProtect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from flask_wtf import FlaskForm
+from wtforms import SubmitField
 import os
 from dotenv import load_dotenv
 import bcrypt
@@ -20,6 +22,9 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Conectar ao Redis
 redis = Redis(host='localhost', port=6379, db=0)
+
+class DummyForm(FlaskForm):
+    submit = SubmitField('Enviar')
 
 # Configurar Limiter com Redis
 limiter = Limiter(
@@ -90,10 +95,16 @@ def hash_password(password):
     salt = bcrypt.gensalt()
     return bcrypt.hashpw(password.encode('utf-8'), salt)
 
+# Classe de formulário de exemplo
+class DummyForm(FlaskForm):
+    submit = SubmitField('Submit')
+
 # Página de login com limite de tentativas
 @app.route('/login', methods=['GET', 'POST'])
 @limiter.limit("5 per minute")  # Limite de tentativas
 def login():
+    form = DummyForm()
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -106,7 +117,6 @@ def login():
         if user_data:
             stored_password = user_data['password']
 
-            # Se stored_password já for bytes, não tente codificá-lo novamente
             if isinstance(stored_password, str):
                 stored_password = stored_password.encode('utf-8')
 
@@ -121,7 +131,7 @@ def login():
             logging.warning(f"Usuário não encontrado: {username}")
             flash('Usuário não encontrado.', 'danger')
 
-    return render_template('login.html')
+    return render_template('login.html', form=form)
 
 # Página de logout
 @app.route('/logout', methods=['POST'])
@@ -135,12 +145,13 @@ def logout():
 @app.route('/')
 @login_required
 def home():
+    form = DummyForm()
     if current_user.tipo_user == 1:
-        return render_template('index.html')
+        return render_template('index.html', form=form)
     elif current_user.codigo_filial != 99:
-        return render_template('home_lojas.html')
+        return render_template('home_lojas.html', form=form)
     else:
-        return render_template('index.html')
+        return render_template('index.html', form=form)
 
 # Página de consulta para suporte_chamados
 @app.route('/chamados')
@@ -153,7 +164,10 @@ def chamados():
         cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
     cur.close()
-    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user)
+
+    form = DummyForm()
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
+
 
 # Página de consulta para infra_chamados
 @app.route('/infra_chamados')
@@ -166,7 +180,9 @@ def infra_chamados():
         cur.execute("SELECT * FROM infra_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
     cur.close()
-    return render_template('infra_chamados.html', dados=dados)
+
+    form = DummyForm()
+    return render_template('infra_chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
 
 # Página de consulta para transporte_chamados
 @app.route('/transporte_chamados')
@@ -179,6 +195,8 @@ def transporte_chamados():
         cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
     cur.close()
+
+    form = DummyForm()
     return render_template('transporte_chamados.html', dados=dados)
 
 # Página de administração para desbloqueio de usuários/IP
@@ -228,7 +246,6 @@ def some_route():
 # Captura de erros globais
 @app.errorhandler(Exception)
 def handle_exception(e):
-    # Captura o erro completo e imprime no terminal
     logging.error(f"Server Error: {traceback.format_exc()}")
     return render_template("500.html"), 500
 
@@ -236,7 +253,5 @@ def handle_exception(e):
 def not_found(e):
     return render_template("404.html"), 404
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-

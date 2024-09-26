@@ -37,12 +37,6 @@
         </div>-->
     
         <!-- Botão de logout no canto superior direito -->
-        <div class="logout-container">
-            <form action="{{ url_for('logout') }}" method="POST" style="display:inline;">
-                {{ csrf_token() }} <!-- Proteção CSRF -->
-                <button type="submit" class="logout-button">Logout</button>
-            </form>
-        </div>       
         <div id="counter-container">
             <span id="result-counter">0</span> resultados encontrados
         </div>
@@ -54,7 +48,7 @@
     <main>
 
         <!-- Botão para voltar ao índice -->
-        <a href="http://192.168.1.167:8000" class="back-to-index">
+        <a href="{{ url_for('home') }}" class="back-to-index">
             <i class="fas fa-home"></i>
         </a>
 
