@@ -13,13 +13,16 @@ import logging
 from functools import wraps
 from redis import Redis
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+# Configurar o tempo de vida da sessão (20 minutos)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 
 # Conectar ao Redis
 redis = Redis(host='localhost', port=6379, db=0)
@@ -138,6 +141,7 @@ def login():
             if bcrypt.checkpw(password.encode('utf-8'), stored_password):
                 user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
                 login_user(user)
+                session.permanent = True  # Define a sessão como permanente
                 return redirect(url_for('home'))
             else:
                 flash('Login inválido, tente novamente.', 'danger')

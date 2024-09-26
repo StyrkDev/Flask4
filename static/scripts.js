@@ -187,3 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+let idleTime = 0;
+setInterval(() => {
+    idleTime++;
+    if (idleTime >= 5) {
+        alert("Você foi desconectado por inatividade.");
+        window.location.href = "{{ url_for('logout') }}";
+    }
+}, 60000); // Incrementa a cada minuto
+
+document.onmousemove = document.onkeydown  = () => idleTime = 0;

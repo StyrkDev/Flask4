@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Administração - Desbloquear Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+            <!-- Botão de logout no canto superior direito -->
+            <div class="logout-container">
+                <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
+                    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+                    <button type="submit" class="logout-button">Sair</button>
+                </form>
+            </div>
 </head>
 
 <body>
@@ -24,5 +32,7 @@
         <button type="submit">Desbloquear IP</button>
     </form>
 </body>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
 
 </html>

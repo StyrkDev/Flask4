@@ -9,6 +9,7 @@ arrumar home, nao ser fixo? ok
 formatar data dd/mm/aaaa ok
 confirmação de logout ok
 criptografia de senhas automatico ok
+tempo de inatividade ok
 
 sql:
 ajustar tabela usuarios

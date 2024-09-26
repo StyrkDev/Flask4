@@ -10,8 +10,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+    <!-- Botão de logout no canto superior direito -->
     <div class="logout-container">
-        <form action="{{ url_for('logout') }}" method="POST">
+        <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
             {{ form.hidden_tag() }} <!-- Proteção CSRF -->
             <button type="submit" class="logout-button">Sair</button>
         </form>

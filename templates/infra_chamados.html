@@ -14,11 +14,12 @@
     <header>
         <!-- Botão de logout no canto superior direito -->
         <div class="logout-container">
-            <form action="{{ url_for('logout') }}" method="POST">
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
                 {{ form.hidden_tag() }} <!-- Proteção CSRF -->
                 <button type="submit" class="logout-button">Sair</button>
             </form>
         </div>
+
         <div id="filter-container">
             <label for="id-filter">Filtrar por ID:</label>
             <input type="text" id="id-filter" placeholder="Digite o ID">
