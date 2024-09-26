@@ -13,6 +13,7 @@ import logging
 from functools import wraps
 from redis import Redis
 import traceback
+from datetime import datetime
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -104,7 +105,7 @@ class DummyForm(FlaskForm):
 @limiter.limit("5 per minute")  # Limite de tentativas
 def login():
     form = DummyForm()
-
+    
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -117,18 +118,30 @@ def login():
         if user_data:
             stored_password = user_data['password']
 
+            # Verificar se a senha armazenada já é um hash bcrypt
+            if not stored_password.startswith('$2b$'):
+                # Se a senha não for um hash bcrypt, hashear e atualizar no banco
+                hashed_password = bcrypt.hashpw(stored_password.encode('utf-8'), bcrypt.gensalt())
+
+                # Atualizar a senha no banco de dados
+                cur = mysql.connection.cursor()
+                cur.execute("UPDATE usuarios SET password = %s WHERE username = %s", [hashed_password.decode('utf-8'), username])
+                mysql.connection.commit()
+                cur.close()
+
+                stored_password = hashed_password  # Usar o hash atualizado para validação
+
             if isinstance(stored_password, str):
                 stored_password = stored_password.encode('utf-8')
 
+            # Verificar se a senha fornecida pelo usuário é válida
             if bcrypt.checkpw(password.encode('utf-8'), stored_password):
                 user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
                 login_user(user)
                 return redirect(url_for('home'))
             else:
-                logging.warning(f"Senha incorreta para o usuário {username}")
                 flash('Login inválido, tente novamente.', 'danger')
         else:
-            logging.warning(f"Usuário não encontrado: {username}")
             flash('Usuário não encontrado.', 'danger')
 
     return render_template('login.html', form=form)
@@ -147,11 +160,15 @@ def logout():
 def home():
     form = DummyForm()
     if current_user.tipo_user == 1:
-        return render_template('index.html', form=form)
+        form = DummyForm()
+        return render_template('index.html', user_type=current_user.tipo_user, form=form)
     elif current_user.codigo_filial != 99:
-        return render_template('home_lojas.html', form=form)
+        form = DummyForm()
+        return render_template('home_lojas.html', user_type=current_user.tipo_user, form=form)
     else:
-        return render_template('index.html', form=form)
+        form = DummyForm()
+        return render_template('index.html', user_type=current_user.tipo_user, form=form)
+
 
 # Página de consulta para suporte_chamados
 @app.route('/chamados')
@@ -164,6 +181,11 @@ def chamados():
         cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
     cur.close()
+
+    # Formatando a data de abertura para dd/mm/aaaa
+    for chamado in dados:
+        if 'data_abertura' in chamado and chamado['data_abertura']:
+            chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
 
     form = DummyForm()
     return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
@@ -181,6 +203,11 @@ def infra_chamados():
     dados = cur.fetchall()
     cur.close()
 
+    # Formatando a data de abertura para dd/mm/aaaa
+    for chamado in dados:
+        if 'data_abertura' in chamado and chamado['data_abertura']:
+            chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
+
     form = DummyForm()
     return render_template('infra_chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
 
@@ -196,15 +223,21 @@ def transporte_chamados():
     dados = cur.fetchall()
     cur.close()
 
+    # Formatando a data de abertura para dd/mm/aaaa
+    for chamado in dados:
+        if 'data_abertura' in chamado and chamado['data_abertura']:
+            chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
+
     form = DummyForm()
-    return render_template('transporte_chamados.html', dados=dados)
+    return render_template('transporte_chamados.html', dados=dados,user_type=current_user.tipo_user, form=form)
 
 # Página de administração para desbloqueio de usuários/IP
 @app.route('/admin', methods=['GET'])
 @login_required
 @admin_required
 def admin_page():
-    return render_template('admin.html')
+    form = DummyForm()
+    return render_template('admin.html',user_type=current_user.tipo_user, form=form)
 
 # Rota para desbloquear o usuário baseado no ID do MySQL
 @app.route('/unblock_user', methods=['POST'])

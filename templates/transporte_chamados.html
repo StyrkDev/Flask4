@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamados Transporte</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/fontawesome-free-6.6.0-web/css/all.min.css">
 </head>
 
 <body>
     <header>
+
+        <div class="logout-container"></div>
+            <form action="{{ url_for('logout') }}" method="POST" onclick="confirmLogout()">
+                {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+                <button type="submit" class="logout-button">Sair</button>
+            </form>
+        </div>
+
         <div id="filter-container">
             <label for="id-filter">Filtrar por ID:</label>
             <input type="text" id="id-filter" placeholder="Digite o ID">
@@ -29,104 +36,6 @@
             <span id="result-counter">0</span> resultados encontrados
         </div>
     </div> 
-
-        <p id="data"></p>
-        <script>
-            function formatarData(data) {
-                const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
-                return new Intl.DateTimeFormat('pt-BR', opcoes).format(data);
-            }
-    
-            const data = new Date(); // Data atual
-            document.getElementById('data').textContent = formatarData(data);
-        </script>
-<!--             <button id="export-to-pdf" class="styled-button">Exportar para PDF</button>
-            <script>   exportar para pdf, mexer depois
-                document.getElementById('export-to-pdf').addEventListener('click', () => {
-                    const { jsPDF } = window.jspdf;
-                    const doc = new jsPDF('landscape', 'mm', 'a4'); // Configura para paisagem A4
-                
-                    // Adiciona título
-                    doc.setFontSize(22);
-                    doc.text('Relatório de Consultas de Chamados', 14, 20);
-                
-                    // Adiciona subtítulo
-                    doc.setFontSize(16);
-                    doc.text('Conteúdo da Tabela', 14, 30);
-                
-                    // Captura o conteúdo da tabela
-                    const table = document.querySelector('#chamados-table');
-                    const rows = table.querySelectorAll('tbody tr'); // Apenas as linhas do corpo da tabela
-                    const startY = 40;
-                    let y = startY;
-                
-                    // Adiciona os cabeçalhos da tabela
-                    const headers = table.querySelectorAll('thead th');
-                    const colWidths = [];
-                    let colWidth = 0;
-                    const headerText = [];
-                    headers.forEach((header, index) => {
-                        headerText.push(header.innerText);
-                        doc.setFontSize(12);
-                        colWidth = 40; // Ajuste a largura das colunas conforme necessário
-                        colWidths.push(colWidth);
-                        doc.text(header.innerText, 10 + colWidths.slice(0, index).reduce((a, b) => a + b, 0), y);
-                    });
-                    y += 10; // Espaço abaixo dos cabeçalhos
-                
-                    // Adiciona os dados da tabela filtrada
-                    rows.forEach(row => {
-                        if (row.style.display !== 'none') { // Verifica se a linha está visível
-                            const cells = row.querySelectorAll('td');
-                            let x = 10;
-                            cells.forEach((cell, index) => {
-                                const cellText = cell.innerText;
-                                const cellWidth = colWidths[index]; // Largura da célula
-                                
-                                // Quebra o texto em várias linhas se necessário
-                                const splitText = doc.splitTextToSize(cellText, cellWidth);
-                                splitText.forEach((line, lineIndex) => {
-                                    doc.setFontSize(10);
-                                    doc.text(line, x, y + (lineIndex * 10)); // Ajusta o y para linhas adicionais
-                                });
-                                
-                                x += colWidth; // Ajusta a posição horizontal para a próxima célula
-                            });
-                            y += 10; // Espaço entre as linhas
-                
-                            // Se o conteúdo exceder uma página, adicione uma nova página
-                            if (y > 270) { // A4 landscape has 297mm height, 20mm margins
-                                y = 20;
-                                doc.addPage();
-                                
-                                // Re-adiciona cabeçalhos na nova página
-                                let xHeader = 10;
-                                headerText.forEach((text, index) => {
-                                    doc.setFontSize(12);
-                                    doc.text(text, xHeader, y);
-                                    xHeader += colWidths[index]; // Ajusta a posição horizontal dos cabeçalhos
-                                });
-                                y += 10; // Espaço abaixo dos cabeçalhos
-                            }
-                        }
-                    });
-                
-                    // Gera a data atual no formato YYYY-MM-DD
-                    const today = new Date();
-                    const day = String(today.getDate()).padStart(2, '0');
-                    const month = String(today.getMonth() + 1).padStart(2, '0');
-                    const year = today.getFullYear();
-                    const formattedDate = `${year}-${month}-${day}`;
-                
-                    // Nome do arquivo com a data
-                    const filename = `relatorio-chamados-${formattedDate}.pdf`;
-                
-                    // Salva o PDF com o nome do arquivo
-                    doc.save(filename);
-                });
-                </script>-->
-                        
-        
     </header>
     
     <main>

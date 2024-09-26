@@ -1,12 +1,9 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/fontawesome-free-6.6.0-web/css/all.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +15,12 @@
     <header>
         <!-- Botão de logout no canto superior direito -->
         <div class="logout-container">
-            <form action="{{ url_for('logout') }}" method="POST" onclick="confirmLogout()">
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
                 {{ form.hidden_tag() }} <!-- Proteção CSRF -->
-                <button type="submit" class="logout-button">Logout</button>
+                <button type="submit" class="logout-button">Sair</button>
             </form>
         </div>
-
+        
         <!-- Filtro e contagem de resultados -->
         <div id="filter-container">
             <label for="id-filter">Filtrar por ID:</label>
@@ -47,7 +44,7 @@
 
     <main>
         <a href="{{ url_for('home') }}" class="back-to-index">
-            <i class="fas fa-home"></i>
+            <i class="fa fa-home"></i>
         </a>
       
         <div class="table-container">

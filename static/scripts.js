@@ -1,3 +1,5 @@
+//console.log("O arquivo scripts.js foi carregado corretamente!");
+
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('chamados-table');
     const headers = table.querySelectorAll('th');
@@ -28,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rows.forEach(row => table.querySelector('tbody').appendChild(row));
         updateCounter(); // Atualiza o contador após a ordenação
     };
-
+  
     // Classifica a coluna ID automaticamente em ordem decrescente ao carregar a página
     sortTable(sortedIndex, sortDirection);
     headers[sortedIndex].classList.add('sort-desc'); // Marca visualmente a coluna classificada
@@ -172,11 +174,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounter(); // Atualiza o contador inicialmente
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('logoutForm');
+    form.addEventListener('submit', function(event) {
+        // Mensagem no console sem o prefixo
+        //logMessage('A função confirmarLogout foi chamada!');
 
-function confirmLogout() {
-    if (confirm("Você realmente deseja sair?")) {
-        window.location.href = "{{ url_for('logout') }}";  // Redireciona para a rota de logout
-    }
-}
-
-
+        // Confirmar se o usuário deseja sair
+        const confirmLogout = confirm("Você tem certeza que deseja sair?");
+        if (!confirmLogout) {
+            event.preventDefault(); // Cancela o envio do formulário se o usuário não confirmar
+        }
+    });
+});
