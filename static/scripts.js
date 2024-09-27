@@ -193,8 +193,25 @@ setInterval(() => {
     idleTime++;
     if (idleTime >= 5) {
         alert("Você foi desconectado por inatividade.");
-        window.location.href = "{{ url_for('logout') }}";
+        
+        // Fazer uma solicitação POST para a rota de logout
+        fetch('/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => {
+            if (response.redirected) {
+                // Redireciona para a página de login após logout
+                window.location.href = response.url;
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao fazer logout:", error);
+        });
     }
 }, 60000); // Incrementa a cada minuto
 
-document.onmousemove = document.onkeydown  = () => idleTime = 0;
+document.onmousemove = document.onkeydown = () => idleTime = 0;
+

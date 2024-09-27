@@ -108,7 +108,7 @@ class DummyForm(FlaskForm):
 @limiter.limit("5 per minute")  # Limite de tentativas
 def login():
     form = DummyForm()
-    
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -119,6 +119,11 @@ def login():
         cur.close()
 
         if user_data:
+            # Verifica se o usuário está ativo
+            if user_data['inativo'] == 1:  # 1 significa inativo
+                flash('Sua conta está inativa. Por favor, entre em contato com o administrador.', 'danger')
+                return redirect(url_for('login'))
+
             stored_password = user_data['password']
 
             # Verificar se a senha armazenada já é um hash bcrypt
@@ -181,6 +186,9 @@ def chamados():
     cur = mysql.connection.cursor()
     if current_user.tipo_user == 1:
         cur.execute("SELECT * FROM suporte_chamados")
+    elif current_user.codigo_filial == 99:
+        setor = session.get('setor', '')  # Pega o setor da sessão
+        cur.execute("SELECT * FROM suporte_chamados WHERE departamento = %s", [setor])
     else:
         cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
