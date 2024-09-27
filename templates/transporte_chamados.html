@@ -12,8 +12,9 @@
 <body>
     <header>
 
-        <div class="logout-container"></div>
-            <form action="{{ url_for('logout') }}" method="POST" onclick="confirmLogout()">
+        <!-- Botão de logout no canto superior direito -->
+        <div class="logout-container">
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
                 {{ form.hidden_tag() }} <!-- Proteção CSRF -->
                 <button type="submit" class="logout-button">Sair</button>
             </form>

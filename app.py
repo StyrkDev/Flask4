@@ -13,13 +13,16 @@ import logging
 from functools import wraps
 from redis import Redis
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+
+# Configurar o tempo de vida da sessão (20 minutos)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 
 # Conectar ao Redis
 redis = Redis(host='localhost', port=6379, db=0)
@@ -105,7 +108,7 @@ class DummyForm(FlaskForm):
 @limiter.limit("5 per minute")  # Limite de tentativas
 def login():
     form = DummyForm()
-    
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -116,6 +119,11 @@ def login():
         cur.close()
 
         if user_data:
+            # Verifica se o usuário está ativo
+            if user_data['inativo'] == 1:  # 1 significa inativo
+                flash('Sua conta está inativa. Por favor, entre em contato com o administrador.', 'danger')
+                return redirect(url_for('login'))
+
             stored_password = user_data['password']
 
             # Verificar se a senha armazenada já é um hash bcrypt
@@ -138,6 +146,7 @@ def login():
             if bcrypt.checkpw(password.encode('utf-8'), stored_password):
                 user = User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
                 login_user(user)
+                session.permanent = True  # Define a sessão como permanente
                 return redirect(url_for('home'))
             else:
                 flash('Login inválido, tente novamente.', 'danger')
@@ -177,6 +186,9 @@ def chamados():
     cur = mysql.connection.cursor()
     if current_user.tipo_user == 1:
         cur.execute("SELECT * FROM suporte_chamados")
+    elif current_user.codigo_filial == 99:
+        setor = session.get('setor', '')  # Pega o setor da sessão
+        cur.execute("SELECT * FROM suporte_chamados WHERE departamento = %s", [setor])
     else:
         cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
     dados = cur.fetchall()
