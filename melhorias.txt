@@ -11,6 +11,7 @@ formatar data dd/mm/aaaa ok
 confirmação de logout ok
 criptografia de senhas automatico ok
 tempo de inatividade ok
+acesso a gerente de mais de uma loja
 
 sql:
 ajustar tabela usuarios
