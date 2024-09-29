@@ -54,7 +54,7 @@
                         <th>ID</th>
                         <th>Status</th>
                         <th>Data Abertura</th>
-
+        
                         {% if user_type == 1 %}
                         <th>Código Filial</th>
                         <th>Setor</th>
@@ -65,10 +65,18 @@
                         <th>Anexo</th>
                         <th>Anydesk</th>
                         <th>Chamado</th>
+        
                         {% elif user_type == 2 %}
-                        <th>Nome</th>
-                        <th>Assunto</th>
-                        <th>Descrição</th>
+                            {% if setor == "Gerentes" %}
+                            <th>Solicitante</th>
+                            <th>Nome</th>
+                            <th>Assunto</th>
+                            <th>Descrição</th>
+                            {% else %}
+                            <th>Nome</th>
+                            <th>Assunto</th>
+                            <th>Descrição</th>
+                            {% endif %}
                         {% endif %}
                     </tr>
                 </thead>
@@ -78,7 +86,7 @@
                         <td>{{ chamado.id }}</td>
                         <td>{{ chamado.status }}</td>
                         <td>{{ chamado.data_abertura }}</td>
-
+        
                         {% if user_type == 1 %}
                         <td>{{ chamado.codigo_filial }}</td>
                         <td>{{ chamado.departamento }}</td>
@@ -89,11 +97,18 @@
                         <td>{{ chamado.anexo }}</td>
                         <td>{{ chamado.anydesk }}</td>
                         <td>{{ chamado.chamado_ocomon }}</td>
-
+        
                         {% elif user_type == 2 %}
-                        <td>{{ chamado.usuario_abertura }}</td>
-                        <td>{{ chamado.tipo }}</td>
-                        <td>{{ chamado.desc_problema }}</td>
+                            {% if setor == "Gerentes" %}
+                            <td>{{ chamado.solicitante }}</td>
+                            <td>{{ chamado.usuario_abertura }}</td>
+                            <td>{{ chamado.tipo }}</td>
+                            <td>{{ chamado.desc_problema }}</td>
+                            {% else %}
+                            <td>{{ chamado.usuario_abertura }}</td>
+                            <td>{{ chamado.tipo }}</td>
+                            <td>{{ chamado.desc_problema }}</td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}

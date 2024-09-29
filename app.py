@@ -190,7 +190,8 @@ def chamados():
         setor = session.get('setor', '')  # Pega o setor da sessão
         cur.execute("SELECT * FROM suporte_chamados WHERE departamento = %s", [setor])
     else:
-        cur.execute("SELECT * FROM suporte_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
+        filiais = current_user.codigo_filial
+        cur.execute("SELECT * FROM suporte_chamados WHERE FIND_IN_SET(codigo_filial, %s)", [filiais])
     dados = cur.fetchall()
     cur.close()
 
@@ -200,7 +201,8 @@ def chamados():
             chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
 
     form = DummyForm()
-    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
+    setor = session.get('setor', '')
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, setor=setor, form=form)
 
 
 # Página de consulta para infra_chamados
