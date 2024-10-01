@@ -1,689 +1,576 @@
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
-    self.limiter._check_request_limit(
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
-    raise e
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
-    self.__evaluate_limits(endpoint, all_limits)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
-    raise RateLimitExceeded(
-flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+ERROR:root:Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+ERROR:root:Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+ERROR:root:Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+ERROR:root:Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
     raise ValidationError("The CSRF token is missing.")
 wtforms.validators.ValidationError: The CSRF token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
 flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 
 ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
     validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
     rv = self.preprocess_request()
          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
     rv = self.ensure_sync(before_func)()
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
     self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
     self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
     raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
-
-ERROR:root:Server Error: Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
-    validate_csrf(self._get_csrf_token())
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 100, in validate_csrf
-    raise ValidationError("The CSRF token is missing.")
-wtforms.validators.ValidationError: The CSRF token is missing.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
-    rv = self.preprocess_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
-    self.protect()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
-    self._error_response(e.args[0])
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
-    raise CSRFError(reason)
-flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF token is missing.
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 

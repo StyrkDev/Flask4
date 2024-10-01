@@ -12,8 +12,10 @@ confirmação de logout ok
 criptografia de senhas automatico ok
 tempo de inatividade ok
 acesso a gerente de mais de uma loja ok
-acesso a gerente de mais de um setor
+acesso a gerente de mais de um setor 
 visualização para gerentes (com mais de um solicitante ou setor)
+fazer base.html com token CSRF.   !?!?!?!?
+destaque de uma linha e coluna quando clica em uma celula
 
 sql:
 ajustar tabela usuarios

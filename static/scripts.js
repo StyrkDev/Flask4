@@ -133,12 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filtra a tabela inicialmente com os checkboxes marcados
     filterByStatus();
 
-    // Função para filtrar a tabela com base no valor da célula
+    // Função para filtrar a tabela com base no valor da célula, permitindo múltiplos valores
     const filterTable = (index, value) => {
         const rows = table.querySelectorAll('tbody tr');
+    
+        // Dividir os valores de filtro com base em vírgula, ponto e vírgula ou barra
+        const filterValues = value.split(/[,;/]+/).map(val => val.trim().toLowerCase());
+    
         rows.forEach(row => {
             const cell = row.cells[index];
-            row.style.display = cell.textContent.toLowerCase().includes(value.toLowerCase()) ? '' : 'none';
+            const cellText = cell.textContent.toLowerCase().trim();
+
+            // Verifica se qualquer valor do filtro está presente na célula
+            const match = filterValues.some(filterValue => cellText.includes(filterValue));
+        
+            // Mostra ou esconde a linha com base no resultado da filtragem
+            row.style.display = match ? '' : 'none';
         });
         updateCounter(); // Atualiza o contador após o filtro
     };
@@ -191,20 +201,29 @@ document.addEventListener('DOMContentLoaded', function() {
 let idleTime = 0;
 setInterval(() => {
     idleTime++;
-    if (idleTime >= 5) {
+    if (idleTime >= 5) { // 5 minutos de inatividade
         alert("Você foi desconectado por inatividade.");
         
-        // Fazer uma solicitação POST para a rota de logout
+        // Recuperar o token CSRF do meta tag
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        
+        // Fazer uma solicitação POST para a rota de logout com o token CSRF
         fetch('/logout', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': csrfToken  // Incluir o token CSRF no cabeçalho
+            },
+            credentials: 'same-origin' // Garantir que os cookies sejam enviados
         })
         .then(response => {
             if (response.redirected) {
                 // Redireciona para a página de login após logout
                 window.location.href = response.url;
+            } else if (response.ok) {
+                window.location.href = '/login';
+            } else {
+                console.error("Erro ao redirecionar após logout:", response.statusText);
             }
         })
         .catch(error => {
@@ -213,5 +232,6 @@ setInterval(() => {
     }
 }, 60000); // Incrementa a cada minuto
 
+// Reiniciar o tempo de inatividade ao detectar movimento ou tecla pressionada
 document.onmousemove = document.onkeydown = () => idleTime = 0;
 

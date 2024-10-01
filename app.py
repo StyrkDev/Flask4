@@ -15,6 +15,7 @@ from redis import Redis
 import traceback
 from datetime import datetime, timedelta
 
+
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
@@ -50,6 +51,7 @@ mysql = MySQL(app)
 
 # Proteção CSRF
 csrf = CSRFProtect(app)
+csrf.init_app(app)
 
 # Configuração de segurança para cookies
 app.config.update(
@@ -184,14 +186,32 @@ def home():
 @login_required
 def chamados():
     cur = mysql.connection.cursor()
+
     if current_user.tipo_user == 1:
         cur.execute("SELECT * FROM suporte_chamados")
+
     elif current_user.codigo_filial == 99:
-        setor = session.get('setor', '')  # Pega o setor da sessão
-        cur.execute("SELECT * FROM suporte_chamados WHERE departamento = %s", [setor])
+        setores = session.get('setor', '').split(',')  # Lista de setores separados por vírgula
+        if setores:
+            queries = []
+            params = []
+            for s in setores:
+                s = s.strip()  # Remove espaços
+                queries.append("REPLACE(TRIM(departamento), '\\n', '') REGEXP CONCAT('(^|,)', %s, '(,|$)')")
+                params.append(s)
+            query = f"SELECT * FROM suporte_chamados WHERE {' OR '.join(queries)}"
+            cur.execute(query, params)
+            
+            # Exibir os resultados antes de aplicar a lógica de filtragem
+            print("Departamentos disponíveis no banco de dados:", [chamado['departamento'] for chamado in dados])
+
+        else:
+            cur.execute("SELECT * FROM suporte_chamados")
+
     else:
         filiais = current_user.codigo_filial
         cur.execute("SELECT * FROM suporte_chamados WHERE FIND_IN_SET(codigo_filial, %s)", [filiais])
+
     dados = cur.fetchall()
     cur.close()
 
