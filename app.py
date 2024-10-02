@@ -15,7 +15,6 @@ from redis import Redis
 import traceback
 from datetime import datetime, timedelta
 
-
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
@@ -23,7 +22,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Configurar o tempo de vida da sessão (20 minutos)
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
 # Conectar ao Redis
 redis = Redis(host='localhost', port=6379, db=0)

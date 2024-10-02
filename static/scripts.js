@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 let idleTime = 0;
 setInterval(() => {
     idleTime++;
-    if (idleTime >= 5) { // 5 minutos de inatividade
+    if (idleTime >= 10) { // 10 minutos de inatividade
         alert("Você foi desconectado por inatividade.");
         
         // Recuperar o token CSRF do meta tag
