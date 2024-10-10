@@ -235,3 +235,22 @@ setInterval(() => {
 // Reiniciar o tempo de inatividade ao detectar movimento ou tecla pressionada
 document.onmousemove = document.onkeydown = () => idleTime = 0;
 
+document.addEventListener('DOMContentLoaded', function() {
+    const rows = document.querySelectorAll('table tr');
+
+    rows.forEach(row => {
+        row.addEventListener('click', function() {
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                rows.forEach(r => r.classList.remove('deselected'));
+            } else {
+                rows.forEach(r => {
+                    r.classList.remove('selected');
+                    r.classList.add('deselected');
+                });
+                this.classList.add('selected');
+                this.classList.remove('deselected');
+            }
+        });
+    });
+});

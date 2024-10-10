@@ -243,3 +243,19 @@ table td.id-column {
     border-radius: 5px;
     color: #ffffff;
 }
+
+/* Estilo padrão da tabela */
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Quando uma linha for selecionada */
+.selected {
+    /*background-color: #0a0a0a;  Cor de ênfase */
+    font-weight: bold;
+}
+
+/* Estilo das linhas não selecionadas */
+.deselected {
+    opacity: 0.2; /* Suaviza as outras linhas */
+}

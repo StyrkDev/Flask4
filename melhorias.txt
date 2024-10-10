@@ -15,7 +15,11 @@ acesso a gerente de mais de uma loja ok
 acesso a gerente de mais de um setor 
 visualização para gerentes (com mais de um solicitante ou setor)
 fazer base.html com token CSRF.   !?!?!?!?
-destaque de uma linha e coluna quando clica em uma celula
+destaque de uma linha quando clica em uma celula ok
+excluir o cabeçalho na hora de destacar
+quando tira o filtro de id, não volta para o filtro de status atual
+quando filtrar, ficar cor de linha uma sim ou nao
+filtros estão trabalhando separados
 
 sql:
 ajustar tabela usuarios

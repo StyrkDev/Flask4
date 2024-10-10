@@ -1,0 +1,910 @@
+2024-10-04 10:39:43,251 INFO [app:126] Tentativa de login do usuário: luis
+2024-10-04 10:39:43,619 INFO [app:173] Usuário luis logado com sucesso.
+2024-10-04 10:39:43,642 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:40:03,489 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:40:37,481 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:40:51,185 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:40:51,185 INFO [app:188] Usuário 10 fez logout.
+2024-10-04 10:41:12,272 INFO [app:126] Tentativa de login do usuário: luis
+2024-10-04 10:41:12,687 INFO [app:173] Usuário luis logado com sucesso.
+2024-10-04 10:41:12,710 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:21,139 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:23,255 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:24,503 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:25,799 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:27,240 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:29,160 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:41:40,634 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:51:24,194 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:51:31,970 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:51:35,359 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:51:35,360 INFO [app:188] Usuário 10 fez logout.
+2024-10-04 10:51:39,167 INFO [app:126] Tentativa de login do usuário: luis
+2024-10-04 10:51:39,597 INFO [app:173] Usuário luis logado com sucesso.
+2024-10-04 10:51:39,629 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:51:49,780 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:02,058 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:44,294 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:52:45,181 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:50,459 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:51,174 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:51,621 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:52,103 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:52,477 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:52,833 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:53,191 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:52:53,589 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:53:12,819 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 358, in force_error
+    return nao_existe()
+           ^^^^^^^^^^
+NameError: name 'nao_existe' is not defined
+
+2024-10-04 10:53:12,838 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:53:16,398 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:54:19,426 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:54:21,097 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:54:21,143 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 22, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:54:25,098 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:54:25,117 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 22, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:55:08,085 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:55:09,031 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:55:09,075 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 22, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:56:21,432 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:56:22,789 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:56:22,830 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 27, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:57:08,487 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:57:13,047 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:57:13,090 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 28, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:57:15,554 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:57:20,735 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:57:20,764 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 28, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:58:25,214 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:58:26,420 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:58:26,459 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 27, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 10:59:30,985 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 10:59:32,188 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 10:59:32,241 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:04:55,012 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 11:04:55,209 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:04:55,268 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 12, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:05:01,745 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:06:22,523 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 11:06:26,075 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:06:26,117 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:08:12,063 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:08:12,089 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    <h1>Logs do Sistema</h1>
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:10:57,365 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:10:57,393 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    <h1>Logs do Sistema</h1>
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:10:59,784 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:10:59,801 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    <h1>Logs do Sistema</h1>
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:10:59,842 WARNING [app:368] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-04 11:10:59,858 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:11:03,685 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:11:06,228 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:11:06,229 INFO [app:188] Usuário 10 fez logout.
+2024-10-04 11:11:12,009 INFO [app:126] Tentativa de login do usuário: jockey
+2024-10-04 11:11:12,362 INFO [app:173] Usuário jockey logado com sucesso.
+2024-10-04 11:11:12,384 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:11:16,673 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:11:16,673 WARNING [app:102] Acesso negado ao usuário 1. Tipo de usuário: 2
+2024-10-04 11:11:16,704 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:13:56,318 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:13:56,319 WARNING [app:102] Acesso negado ao usuário 1. Tipo de usuário: 2
+2024-10-04 11:13:56,344 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:14:04,324 INFO [app:92] Usuário 1 carregado com sucesso.
+2024-10-04 11:14:04,324 INFO [app:188] Usuário 1 fez logout.
+2024-10-04 11:14:18,340 INFO [app:126] Tentativa de login do usuário: luis
+2024-10-04 11:14:18,707 INFO [app:173] Usuário luis logado com sucesso.
+2024-10-04 11:14:18,746 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:14:22,922 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:14:29,023 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:14:29,039 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    return render_template('logs.html', log_content=log_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    <h1>Logs do Sistema</h1>
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:16:55,989 INFO [app:92] Usuário 10 carregado com sucesso.
+2024-10-04 11:16:56,045 ERROR [app:363] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 313, in view_logs
+    form = DummyForm()
+           ^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\logs.html", line 19, in top-level template code
+    <h1>Logs do Sistema</h1>
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+
+2024-10-04 11:18:14,566 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 11:18:15,803 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:31,486 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:34,221 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:35,005 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:35,626 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:25:35,660 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:25:35,680 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:36,776 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:25:36,778 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:25:36,793 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:37,328 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:25:37,329 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:25:37,347 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:37,821 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:25:37,822 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:25:37,837 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:25:52,251 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:25:52,252 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:25:52,267 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:26:11,768 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:26:11,770 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:26:11,790 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:26:15,575 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:26:19,098 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:26:33,792 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:26:33,792 INFO [app:188] usuario 10 fez logout.
+2024-10-04 11:26:37,803 INFO [app:126] Tentativa de login do usuario: jockey
+2024-10-04 11:26:38,139 INFO [app:173] usuario jockey logado com sucesso.
+2024-10-04 11:26:38,163 INFO [app:92] usuario 1 carregado com sucesso.
+2024-10-04 11:26:44,969 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: view_logs
+2024-10-04 11:26:44,972 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-10-04 11:26:44,992 INFO [app:92] usuario 1 carregado com sucesso.
+2024-10-04 11:27:15,277 INFO [app:92] usuario 1 carregado com sucesso.
+2024-10-04 11:27:15,277 INFO [app:188] usuario 1 fez logout.
+2024-10-04 11:27:22,314 INFO [app:126] Tentativa de login do usuario: luis
+2024-10-04 11:27:22,720 INFO [app:173] usuario luis logado com sucesso.
+2024-10-04 11:27:22,830 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:27:42,958 INFO [app:92] usuario 10 carregado com sucesso.
+2024-10-04 11:49:48,602 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:49:48,649 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 11:50:48,608 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:50:48,612 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 11:51:48,641 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:51:48,643 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 11:52:48,307 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:52:48,310 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 11:53:48,301 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:53:48,304 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 11:54:03,068 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 11:54:03,071 ERROR [app:364] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 261, in protect
+    validate_csrf(self._get_csrf_token())
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 103, in validate_csrf
+    raise ValidationError("The CSRF session token is missing.")
+wtforms.validators.ValidationError: The CSRF session token is missing.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 229, in csrf_protect
+    self.protect()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 264, in protect
+    self._error_response(e.args[0])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_wtf\csrf.py", line 307, in _error_response
+    raise CSRFError(reason)
+flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
+
+2024-10-04 12:17:17,380 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 12:19:48,762 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 12:19:57,979 INFO [app:127] Tentativa de login do usuario: luis
+2024-10-04 12:19:58,346 INFO [app:174] usuario luis logado com sucesso.
+2024-10-04 12:19:58,370 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:03,725 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:07,627 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:08,456 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:11,227 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:12,194 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:15,412 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:16,211 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:20:36,602 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:30:42,576 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 12:44:32,178 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 12:44:43,047 INFO [app:127] Tentativa de login do usuario: luis
+2024-10-04 12:44:43,412 INFO [app:174] usuario luis logado com sucesso.
+2024-10-04 12:44:43,440 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:45:27,009 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 12:54:18,847 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-04 12:54:42,207 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 13:54:04,983 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 13:54:04,991 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-04 13:54:13,188 INFO [app:127] Tentativa de login do usuario: luis
+2024-10-04 13:54:13,542 INFO [app:174] usuario luis logado com sucesso.
+2024-10-04 13:54:13,570 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-04 14:04:19,554 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 14:04:19,558 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-04 14:41:18,343 INFO [csrf:263] The CSRF session token is missing.
+2024-10-04 14:41:18,344 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-07 13:17:03,153 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-07 13:17:04,986 WARNING [app:377] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-07 13:17:09,567 INFO [app:127] Tentativa de login do usuario: luis
+2024-10-07 13:17:10,475 INFO [app:174] usuario luis logado com sucesso.
+2024-10-07 13:17:10,600 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:17:19,707 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:18:10,101 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:19:26,416 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:19:28,037 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:19:55,463 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:20:32,761 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-07 13:30:39,160 INFO [csrf:263] The CSRF session token is missing.
+2024-10-07 13:30:39,161 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-10 09:55:20,391 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-10 09:55:27,104 WARNING [app:377] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-10 09:55:35,538 INFO [app:127] Tentativa de login do usuario: jockey
+2024-10-10 09:55:36,140 INFO [app:174] usuario jockey logado com sucesso.
+2024-10-10 09:55:36,250 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:55:39,812 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:55:45,866 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:55:46,266 WARNING [app:377] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-10 09:55:46,289 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:55:55,519 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:55:55,519 INFO [app:189] usuario 1 fez logout.
+2024-10-10 09:56:32,944 INFO [app:127] Tentativa de login do usuario: jockey
+2024-10-10 09:56:33,347 INFO [app:174] usuario jockey logado com sucesso.
+2024-10-10 09:56:33,373 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 09:56:35,011 INFO [app:93] usuario 1 carregado com sucesso.
+2024-10-10 10:12:25,282 INFO [csrf:263] The CSRF session token is missing.
+2024-10-10 10:12:25,284 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-10 10:16:19,283 INFO [app:127] Tentativa de login do usuario: luis
+2024-10-10 10:16:19,641 INFO [app:174] usuario luis logado com sucesso.
+2024-10-10 10:16:19,668 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 10:16:21,378 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 10:17:32,731 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 10:17:34,003 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 10:49:44,966 INFO [csrf:263] The CSRF session token is missing.
+2024-10-10 10:49:44,972 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
