@@ -1,13 +1,11 @@
-//console.log("O arquivo scripts.js foi carregado corretamente!");
-
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('chamados-table');
     const headers = table.querySelectorAll('th');
     const idFilter = document.getElementById('id-filter');
+    const resultCounter = document.getElementById('result-counter');
+    const statusCheckboxes = document.querySelectorAll('.status-checkbox');
     let sortDirection = 'desc'; // Direção de ordenação decrescente
     let sortedIndex = 0; // Índice da coluna ID
-
-    const resultCounter = document.getElementById('result-counter');
 
     // Função para atualizar o contador de resultados
     const updateCounter = () => {
@@ -94,10 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterById(e.target.value.trim());
     });
 
-    // Filtrar por status usando checkboxes
-    const statusCheckboxes = document.querySelectorAll('.status-checkbox');
-
-    // Marcar "Aberta", "Em Atendimento" e "Em Pausa" como padrão
+       // Marcar "Aberta", "Em Atendimento" e "Em Pausa" como padrão
     statusCheckboxes.forEach(checkbox => {
         if (['Aberta', 'Em Atendimento', 'Em Pausa'].includes(checkbox.value)) {
             checkbox.checked = true;
@@ -239,7 +234,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const rows = document.querySelectorAll('table tr');
 
     rows.forEach(row => {
-        row.addEventListener('click', function() {
+        row.addEventListener('click', function(event) {
+
+            // Verifica se o elemento clicado é um cabeçalho
+            if (event.target.tagName === 'TH') return;
+
             if (this.classList.contains('selected')) {
                 this.classList.remove('selected');
                 rows.forEach(r => r.classList.remove('deselected'));

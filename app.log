@@ -908,3 +908,352 @@ flask_wtf.csrf.CSRFError: 400 Bad Request: The CSRF session token is missing.
 2024-10-10 10:17:34,003 INFO [app:93] usuario 10 carregado com sucesso.
 2024-10-10 10:49:44,966 INFO [csrf:263] The CSRF session token is missing.
 2024-10-10 10:49:44,972 INFO [app:364] Um usuário não autenticado foi deslogado por inatividade
+2024-10-10 17:04:32,629 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-10 17:05:55,105 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-10 17:06:00,708 INFO [app:128] Tentativa de login do usuario: luis
+2024-10-10 17:06:01,103 INFO [app:175] usuario luis logado com sucesso.
+2024-10-10 17:06:01,123 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 17:06:02,409 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 17:14:16,306 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 17:22:07,301 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 17:22:08,254 INFO [app:93] usuario 10 carregado com sucesso.
+2024-10-10 17:22:20,165 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-28 16:15:31,123 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-28 16:15:38,043 WARNING [app:385] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-28 16:15:41,955 INFO [app:129] Tentativa de login do usuario: luis
+2024-10-28 16:15:47,974 ERROR [app:380] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 151, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-28 16:15:58,077 INFO [app:129] Tentativa de login do usuario: luis
+2024-10-28 16:15:58,101 ERROR [app:380] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 151, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-28 16:16:08,092 INFO [app:129] Tentativa de login do usuario: luis
+2024-10-28 16:16:08,116 ERROR [app:380] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 151, in login
+    # Se a senha não for um hash bcrypt, hashear e atualizar no banco
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-28 16:16:50,489 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-28 16:16:56,342 INFO [app:128] Tentativa de login do usuario: luis
+2024-10-28 16:16:56,395 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 150, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-28 16:17:04,946 INFO [app:128] Tentativa de login do usuario: luis
+2024-10-28 16:17:04,969 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 150, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-29 15:11:33,139 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-29 15:46:48,763 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-29 15:46:52,749 INFO [app:128] Tentativa de login do usuario: luis
+2024-10-29 15:46:52,960 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 150, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-29 15:47:20,512 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-10-29 15:47:26,917 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-10-29 15:47:32,141 INFO [app:128] Tentativa de login do usuario: luis
+2024-10-29 15:47:32,190 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 150, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-10-29 15:47:43,095 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-10-29 15:47:43,097 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 08:45:04,771 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 09:25:06,780 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 09:27:54,203 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 10:34:43,389 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 10:46:58,298 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 10:48:05,450 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 10:48:07,442 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 10:48:11,456 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 10:48:11,989 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 10:48:12,010 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:48:13,031 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:48:27,056 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:48:30,002 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:49:08,251 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 10:49:16,029 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:49:16,030 INFO [app:190] usuario 2 fez logout.
+2024-11-06 10:49:21,098 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 10:49:21,452 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 10:49:21,473 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 10:49:23,175 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:03:27,795 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 11:03:27,796 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 11:07:44,507 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:08:00,206 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 11:08:00,582 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 11:08:00,607 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:08:02,489 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:08:54,633 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:08:56,285 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:19:02,801 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 11:19:02,802 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 11:21:05,326 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:21:16,438 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:16,446 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:21:16,485 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 11:21:16,595 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:16,598 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:21:16,629 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 11:21:19,256 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:19,259 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:21:22,241 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:22,243 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:21:25,397 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:25,398 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:21:36,481 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:21:36,482 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:22:09,255 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:22:09,256 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:22:11,676 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-06 11:22:11,678 ERROR [app:373] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-06 11:22:15,973 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:22:22,236 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 11:22:22,600 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 11:22:22,622 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:22:25,088 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:24:53,139 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:25:04,539 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:25:23,165 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:25:23,687 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 11:25:23,708 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:25:25,647 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:25:25,647 INFO [app:190] usuario 2 fez logout.
+2024-11-06 11:25:30,051 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 11:25:30,401 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 11:25:30,430 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:25:31,630 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:35:37,899 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 11:35:37,900 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 11:41:29,148 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 11:41:29,526 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 11:41:29,550 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:41:30,482 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 11:44:43,622 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 11:44:54,290 INFO [app:93] usuario 2 carregado com sucesso.

@@ -120,8 +120,8 @@ class DummyForm(FlaskForm):
 @limiter.limit("5 per minute")  # Limite de tentativas
 def login():
     form = DummyForm()
-    
     flash('Por favor, faça login para acessar.', 'info')
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
