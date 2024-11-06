@@ -16,10 +16,10 @@ acesso a gerente de mais de um setor
 visualização para gerentes (com mais de um solicitante ou setor)
 fazer base.html com token CSRF.   !?!?!?!?
 destaque de uma linha quando clica em uma celula ok
-Não aplicar o destaque de linha ao cabeçalho e quando clicar nele não destacar
-quando tira o filtro de id, não volta para o filtro de status atual
+Não aplicar o destaque de linha ao cabeçalho e quando clicar nele não destacar ok
+quando tira o filtro de id, não volta para o filtro de status atual ok
 quando filtrar, ficar cor de linha uma sim ou nao
-filtros estão trabalhando separados
+filtros estão trabalhando separados ok
 
 sempre limpar cache na tela de login
 quando deslogar, sempre voltar para tela de login

@@ -12,6 +12,86 @@ document.addEventListener('DOMContentLoaded', () => {
         const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
         resultCounter.textContent = visibleRows.length;
     };
+   
+    const applyFilters = () => {
+        const idValue = idFilter.value.trim().toLowerCase();
+        const selectedStatuses = Array.from(statusCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value.toLowerCase());
+
+        const headerFilters = Array.from(headers).map(header => {
+            const input = header.querySelector('input');
+            return input ? input.value.trim().toLowerCase() : '';
+        });
+
+        const rows = table.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            const idCell = row.cells[0].textContent.trim().toLowerCase();
+            const statusCell = row.cells[1].textContent.trim().toLowerCase();
+
+            const matchesId = idValue ? idCell === idValue : true; // Exato se não estiver vazio
+            const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(statusCell);
+            const matchesHeaderFilters = Array.from(row.cells).every((cell, index) => {
+                const filterValue = headerFilters[index];
+                return !filterValue || cell.textContent.toLowerCase().includes(filterValue);
+            });
+
+            if (idValue) {
+                row.style.display = matchesId ? '' : 'none';
+            } else {
+                row.style.display = matchesStatus && matchesHeaderFilters ? '' : 'none';
+            }
+        });
+        updateCounter();
+        updateRowColors();
+    };    
+
+    const updateRowColors = () => {
+        const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
+        visibleRows.forEach((row, index) => {
+            row.classList.toggle('even-row', index % 2 === 0);
+            row.classList.toggle('odd-row', index % 2 !== 0);
+        });
+    };
+
+    idFilter.addEventListener('input', applyFilters);
+
+    statusCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', applyFilters);
+    });
+
+    headers.forEach((header, index) => {
+        const existingInput = header.querySelector('input');
+        if (!existingInput) {
+            const filterInput = document.createElement('input');
+            filterInput.type = 'text';
+            filterInput.placeholder = `Filtrar ${header.textContent}`;
+
+            header.appendChild(filterInput);
+
+            filterInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            filterInput.addEventListener('input', applyFilters);
+        }
+    });
+
+    // Marcar "Aberta", "Em Atendimento" e "Em Pausa" como padrão
+    statusCheckboxes.forEach(checkbox => {
+        if (['Aberta', 'Em Atendimento', 'Em Pausa'].includes(checkbox.value)) {
+            checkbox.checked = true;
+        }
+    }); 
+
+    // Inicializa a tabela com os filtros aplicados
+    applyFilters();
+    updateRowColors();
+
+    // Se houver necessidade de ordenar a tabela ao carregar
+    if (sortedIndex !== null) {
+        sortTable(sortedIndex, sortDirection);
+    }
 
     // Função para ordenar a tabela
     const sortTable = (index, direction) => {
@@ -27,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         rows.forEach(row => table.querySelector('tbody').appendChild(row));
         updateCounter(); // Atualiza o contador após a ordenação
+        updateRowColors();
     };
   
     // Classifica a coluna ID automaticamente em ordem decrescente ao carregar a página
@@ -177,9 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCounter(); // Atualiza o contador inicialmente
-});
 
-document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('logoutForm');
     form.addEventListener('submit', function(event) {
         // Mensagem no console sem o prefixo
@@ -191,7 +270,31 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // Cancela o envio do formulário se o usuário não confirmar
         }
     });
+
+    const rows = document.querySelectorAll('table tr');
+
+    rows.forEach(row => {
+        row.addEventListener('click', function(event) {
+
+            // Verifica se o elemento clicado é um cabeçalho
+            if (event.target.tagName === 'TH') return;
+
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                rows.forEach(r => r.classList.remove('deselected'));
+            } else {
+                rows.forEach(r => {
+                    r.classList.remove('selected');
+                    r.classList.add('deselected');
+                });
+                this.classList.add('selected');
+                this.classList.remove('deselected');
+            }
+        });
+    });
+
 });
+
 
 let idleTime = 0;
 setInterval(() => {
@@ -229,27 +332,3 @@ setInterval(() => {
 
 // Reiniciar o tempo de inatividade ao detectar movimento ou tecla pressionada
 document.onmousemove = document.onkeydown = () => idleTime = 0;
-
-document.addEventListener('DOMContentLoaded', function() {
-    const rows = document.querySelectorAll('table tr');
-
-    rows.forEach(row => {
-        row.addEventListener('click', function(event) {
-
-            // Verifica se o elemento clicado é um cabeçalho
-            if (event.target.tagName === 'TH') return;
-
-            if (this.classList.contains('selected')) {
-                this.classList.remove('selected');
-                rows.forEach(r => r.classList.remove('deselected'));
-            } else {
-                rows.forEach(r => {
-                    r.classList.remove('selected');
-                    r.classList.add('deselected');
-                });
-                this.classList.add('selected');
-                this.classList.remove('deselected');
-            }
-        });
-    });
-});

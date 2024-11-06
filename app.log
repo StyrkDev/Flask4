@@ -1257,3 +1257,91 @@ flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
 2024-11-06 11:41:30,482 INFO [app:93] usuario 2 carregado com sucesso.
 2024-11-06 11:44:43,622 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
 2024-11-06 11:44:54,290 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 12:50:39,283 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 12:50:39,287 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 12:50:39,586 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 12:50:39,587 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 12:57:09,107 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 12:57:18,863 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 12:57:19,304 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 12:57:19,329 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 12:57:20,483 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 12:58:55,733 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 12:58:57,480 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:00:16,423 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 13:00:20,701 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:01:14,508 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 13:01:20,120 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:01:21,244 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:01:22,031 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 13:01:22,053 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:23:28,278 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 13:23:28,287 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 13:27:48,168 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 13:27:48,571 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 13:27:48,600 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:27:50,415 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:27:52,989 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:37:59,106 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 13:37:59,106 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 13:56:05,980 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 13:58:21,738 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 13:58:21,740 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 13:58:27,527 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 13:58:27,999 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 13:58:28,023 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 13:58:29,753 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 14:14:27,009 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 14:14:27,023 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 14:14:27,059 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 14:14:27,059 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 14:22:23,694 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 16:40:00,922 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 16:40:01,455 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 16:40:01,484 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:40:04,270 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:48:42,610 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 16:48:45,538 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:48:45,976 WARNING [app:378] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 16:48:46,000 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:48:50,583 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 16:48:50,950 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 16:48:50,976 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:48:57,552 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:49:39,898 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 16:49:41,919 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:50:11,252 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:50:11,252 INFO [app:190] usuario 2 fez logout.
+2024-11-06 16:51:04,993 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 16:51:17,939 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 16:51:18,356 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 16:51:18,384 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:51:19,281 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 16:57:27,237 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 16:57:32,001 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:12:33,239 INFO [csrf:263] The CSRF session token is missing.
+2024-11-06 17:12:33,242 INFO [app:365] Um usuário não autenticado foi deslogado por inatividade
+2024-11-06 17:14:23,617 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 17:14:28,632 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 17:14:29,153 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 17:14:29,180 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:14:30,871 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:16:49,996 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:16:49,997 INFO [app:190] usuario 2 fez logout.
+2024-11-06 17:17:01,667 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 17:17:02,123 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 17:17:02,414 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:17:07,623 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:17:11,770 WARNING [app:378] Página não encontrada: http://localhost:8279/logs
+2024-11-06 17:17:11,792 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:17:17,503 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:17:45,081 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:20:22,791 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 17:20:24,079 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:24:39,546 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:27:36,838 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 17:27:42,361 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:27:46,642 INFO [app:128] Tentativa de login do usuario: luis
+2024-11-06 17:27:47,017 INFO [app:175] usuario luis logado com sucesso.
+2024-11-06 17:27:47,049 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 17:27:48,572 INFO [app:93] usuario 2 carregado com sucesso.
