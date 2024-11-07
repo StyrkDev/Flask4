@@ -18,13 +18,14 @@ Não aplicar o destaque de linha ao cabeçalho e quando clicar nele não destaca
 quando tira o filtro de id, não volta para o filtro de status atual ok
 quando filtrar, ficar cor de linha uma sim ou nao ok
 filtros estão trabalhando separados ok
-acesso a gerente de mais de um setor, tipo 4 
-visualização para gerentes (com mais de um solicitante ou setor)
-cabeçalho parou de classificar
+visualização para gerentes (com mais de um solicitante ou setor) , tipo 4 ok
+acesso a gerente de mais de um setor
+cabeçalho parou de classificar quando clica
+fazer recuperação de senha
 
 sempre limpar cache na tela de login ok
 quando deslogar, sempre voltar para tela de login ok
 
 sql:
-ajustar tabela usuarios
+ajustar tabela usuarios ok
 ajustar codigo filial tabelas solicitações

@@ -118,7 +118,7 @@ class DummyForm(FlaskForm):
 
 # Página de login com limite de tentativas
 @app.route('/login', methods=['GET', 'POST'])
-@limiter.limit("5 per minute")  # Limite de tentativas
+@limiter.limit("10 per minute")  # Limite de tentativas
 def login():
     form = DummyForm()
     flash('Por favor, faça login para acessar.', 'info')

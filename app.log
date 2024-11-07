@@ -1459,3 +1459,157 @@ AttributeError: 'NoneType' object has no attribute 'startswith'
 2024-11-06 23:29:17,369 INFO [app:94] usuario 5 carregado com sucesso.
 2024-11-06 23:29:35,500 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
 2024-11-06 23:29:37,765 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-07 12:58:05,080 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 12:58:05,787 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 12:58:09,738 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 12:58:10,209 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 12:58:10,232 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 12:58:11,858 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 12:58:17,317 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 12:58:17,317 INFO [app:195] usuario 1 fez logout.
+2024-11-07 12:58:21,898 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 12:58:22,261 WARNING [app:179] Tentativa de login falhou para luis: senha inválida.
+2024-11-07 12:58:33,050 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 12:58:33,381 WARNING [app:179] Tentativa de login falhou para luis: senha inválida.
+2024-11-07 12:58:33,497 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 12:58:38,022 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-07 12:58:38,026 ERROR [app:378] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-07 12:58:42,822 INFO [extension:1095] ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: login
+2024-11-07 12:58:42,825 ERROR [app:378] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1299, in __inner
+    self.limiter._check_request_limit(
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
+
+2024-11-07 13:00:06,658 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 13:00:15,411 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 13:00:18,801 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 13:00:19,200 WARNING [app:179] Tentativa de login falhou para luis: senha inválida.
+2024-11-07 13:00:25,903 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 13:00:26,249 WARNING [app:179] Tentativa de login falhou para luis: senha inválida.
+2024-11-07 13:00:26,365 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 13:00:31,655 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 13:00:32,003 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 13:00:32,028 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 13:00:33,781 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 13:10:40,302 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 13:10:40,302 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
+2024-11-07 14:30:15,058 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 14:30:20,917 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 14:30:21,451 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 14:30:21,478 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:30:23,319 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:32:12,269 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 14:32:20,524 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:32:23,085 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:32:23,745 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 14:32:23,769 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:34:53,398 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 14:34:56,763 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:30,434 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:44,624 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 14:38:47,007 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:49,777 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:50,334 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 14:38:50,355 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:50,921 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:51,351 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 14:38:51,369 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:51,770 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:38:52,187 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-07 14:38:52,209 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:39:37,525 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 14:39:40,139 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:50:50,120 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 14:50:50,482 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 14:50:50,525 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 14:50:51,803 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 15:11:02,585 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 15:11:02,586 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
+2024-11-07 15:19:22,169 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 15:19:22,570 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 15:19:22,595 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 15:19:23,896 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 15:22:32,809 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 15:22:32,809 INFO [app:195] usuario 1 fez logout.
+2024-11-07 15:22:41,808 INFO [app:129] Tentativa de login do usuario: Dyhonatan
+2024-11-07 15:22:42,198 INFO [app:161] Senha do usuario Dyhonatan atualizada para hash bcrypt.
+2024-11-07 15:22:42,513 INFO [app:176] usuario Dyhonatan logado com sucesso.
+2024-11-07 15:22:42,540 INFO [app:94] usuario 183 carregado com sucesso.
+2024-11-07 15:22:46,534 INFO [app:94] usuario 183 carregado com sucesso.
+2024-11-07 15:34:54,535 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 15:34:54,535 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
+2024-11-07 16:29:40,464 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 16:29:40,466 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
+2024-11-07 16:29:45,270 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 16:29:45,657 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 16:29:45,684 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 16:29:46,772 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 16:30:03,579 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 16:30:03,580 INFO [app:195] usuario 1 fez logout.
+2024-11-07 16:30:26,094 INFO [app:129] Tentativa de login do usuario: Duin
+2024-11-07 16:30:26,465 INFO [app:161] Senha do usuario Duin atualizada para hash bcrypt.
+2024-11-07 16:30:26,784 INFO [app:176] usuario Duin logado com sucesso.
+2024-11-07 16:30:26,808 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:30:28,766 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:31:31,048 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:32:49,138 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 16:32:50,541 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:49:14,928 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 16:49:14,931 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
+2024-11-07 16:51:39,178 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-07 16:51:39,625 INFO [app:161] Senha do usuario felipe atualizada para hash bcrypt.
+2024-11-07 16:51:39,930 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-07 16:51:39,958 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:51:41,224 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:52:08,228 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:52:08,228 INFO [app:195] usuario 210 fez logout.
+2024-11-07 16:54:29,937 INFO [app:129] Tentativa de login do usuario: Palladium
+2024-11-07 16:54:30,314 INFO [app:161] Senha do usuario Palladium atualizada para hash bcrypt.
+2024-11-07 16:54:30,631 INFO [app:176] usuario Palladium logado com sucesso.
+2024-11-07 16:54:30,655 INFO [app:94] usuario 154 carregado com sucesso.
+2024-11-07 16:54:31,978 INFO [app:94] usuario 154 carregado com sucesso.
+2024-11-07 16:55:02,967 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 16:55:07,605 INFO [app:94] usuario 154 carregado com sucesso.
+2024-11-07 16:55:21,623 INFO [app:94] usuario 154 carregado com sucesso.
+2024-11-07 16:55:21,623 INFO [app:195] usuario 154 fez logout.
+2024-11-07 16:55:26,418 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-07 16:55:26,776 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-07 16:55:26,805 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:55:28,906 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:55:37,087 INFO [app:94] usuario 210 carregado com sucesso.
+2024-11-07 16:55:37,087 INFO [app:195] usuario 210 fez logout.
+2024-11-07 16:55:58,359 INFO [app:129] Tentativa de login do usuario: duin
+2024-11-07 16:55:58,765 INFO [app:176] usuario duin logado com sucesso.
+2024-11-07 16:55:58,793 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:56:00,307 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 16:58:35,442 INFO [app:94] usuario 192 carregado com sucesso.
+2024-11-07 17:09:42,689 INFO [csrf:263] The CSRF session token is missing.
+2024-11-07 17:09:42,698 INFO [app:370] Um usuário não autenticado foi deslogado por inatividade
