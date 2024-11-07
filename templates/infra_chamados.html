@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/fontawesome-free-6.6.0-web/css/all.min.css">
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Chamados Infra</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="/static/fontawesome-free-6.6.0-web/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -20,6 +22,7 @@
             </form>
         </div>
 
+        <!-- Filtro e contagem de resultados -->       
         <div id="filter-container">
             <label for="id-filter">Filtrar por ID:</label>
             <input type="text" id="id-filter" placeholder="Digite o ID">
@@ -32,23 +35,15 @@
             <label><input type="checkbox" value="Cancelado" class="status-checkbox"> Cancelado</label>
             <label><input type="checkbox" value="Finalizada" class="status-checkbox"> Finalizada</label>
         </div>  
-                 <!-- Imagem centralizada no topo 
-        <div class="logo-container">
-            <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
-        </div>-->
-    
+
         <!-- Botão de logout no canto superior direito -->
         <div id="counter-container">
             <span id="result-counter">0</span> resultados encontrados
         </div>
-        </div>
-       
-        </header>
     
+    </header>
     
     <main>
-
-        <!-- Botão para voltar ao índice -->
         <a href="{{ url_for('home') }}" class="back-to-index">
             <i class="fas fa-home"></i>
         </a>
@@ -60,8 +55,9 @@
                         <th>ID</th>
                         <th>Status</th>
                         <th>Data Abertura</th>
-
-                        {% if user_type == 1 %}
+                        <th>Horario Abertura</th>
+        
+                        {% if user_type in [2, 3] %}
                         <th>Código Filial</th>
                         <th>Setor</th>
                         <th>Solicitante</th>
@@ -71,10 +67,18 @@
                         <th>Anexo</th>
                         <th>Anydesk</th>
                         <th>Chamado</th>
-                        {% elif user_type == 2 %}
-                        <th>Nome</th>
-                        <th>Assunto</th>
-                        <th>Descrição</th>
+        
+                        {% elif user_type == 1 %}
+                            {% if setor == "Comercial / Gerentes" %}
+                            <th>Solicitante</th>
+                            <th>Nome</th>
+                            <th>Assunto</th>
+                            <th>Descrição</th>
+                            {% else %}
+                            <th>Nome</th>
+                            <th>Assunto</th>
+                            <th>Descrição</th>
+                            {% endif %}
                         {% endif %}
                     </tr>
                 </thead>
@@ -84,8 +88,9 @@
                         <td>{{ chamado.id }}</td>
                         <td>{{ chamado.status }}</td>
                         <td>{{ chamado.data_abertura }}</td>
+                        <td>{{ chamado.horario_abertura}}</td>
 
-                        {% if user_type == 1 %}
+                        {% if user_type in [2, 3] %}
                         <td>{{ chamado.codigo_filial }}</td>
                         <td>{{ chamado.departamento }}</td>
                         <td>{{ chamado.solicitante }}</td>
@@ -95,11 +100,18 @@
                         <td>{{ chamado.anexo }}</td>
                         <td>{{ chamado.anydesk }}</td>
                         <td>{{ chamado.chamado_ocomon }}</td>
-
-                        {% elif user_type == 2 %}
-                        <td>{{ chamado.usuario_abertura }}</td>
-                        <td>{{ chamado.tipo }}</td>
-                        <td>{{ chamado.desc_problema }}</td>
+        
+                        {% elif user_type == 1 %}
+                            {% if setor == "Comercial / Gerentes" %}
+                            <td>{{ chamado.solicitante }}</td>
+                            <td>{{ chamado.usuario_abertura }}</td>
+                            <td>{{ chamado.tipo }}</td>
+                            <td>{{ chamado.desc_problema }}</td>
+                            {% else %}
+                            <td>{{ chamado.usuario_abertura }}</td>
+                            <td>{{ chamado.tipo }}</td>
+                            <td>{{ chamado.desc_problema }}</td>
+                            {% endif %}
                         {% endif %}
                     </tr>
                     {% endfor %}

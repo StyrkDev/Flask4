@@ -258,7 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCounter(); // Atualiza o contador inicialmente
+    
+});
 
+document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('logoutForm');
     form.addEventListener('submit', function(event) {
         // Mensagem no console sem o prefixo
@@ -270,7 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault(); // Cancela o envio do formulário se o usuário não confirmar
         }
     });
+});
 
+document.addEventListener('DOMContentLoaded', function() {
     const rows = document.querySelectorAll('table tr');
 
     rows.forEach(row => {

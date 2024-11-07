@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Consulta de Chamados</title>
+    <title>Chamados Suporte</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
@@ -55,8 +55,10 @@
                         <th>ID</th>
                         <th>Status</th>
                         <th>Data Abertura</th>
-        
-                        {% if user_type == 1 %}
+                        <th>Horario Abertura</th>
+                        <p>Setor: {{ departamento }}</p>
+
+                        {% if user_type in [2, 3] %}
                         <th>Código Filial</th>
                         <th>Setor</th>
                         <th>Solicitante</th>
@@ -67,8 +69,8 @@
                         <th>Anydesk</th>
                         <th>Chamado</th>
         
-                        {% elif user_type == 2 %}
-                            {% if setor == "Gerentes" %}
+                        {% elif user_type == 1 %}
+                            {% if departamento|string|trim == "Comercial / Gerentes" %}
                             <th>Solicitante</th>
                             <th>Nome</th>
                             <th>Assunto</th>
@@ -87,8 +89,9 @@
                         <td>{{ chamado.id }}</td>
                         <td>{{ chamado.status }}</td>
                         <td>{{ chamado.data_abertura }}</td>
+                        <td>{{ chamado.horario_abertura}}</td>
         
-                        {% if user_type == 1 %}
+                        {% if user_type in [2, 3] %}
                         <td>{{ chamado.codigo_filial }}</td>
                         <td>{{ chamado.departamento }}</td>
                         <td>{{ chamado.solicitante }}</td>
@@ -99,8 +102,8 @@
                         <td>{{ chamado.anydesk }}</td>
                         <td>{{ chamado.chamado_ocomon }}</td>
         
-                        {% elif user_type == 2 %}
-                            {% if setor == "Gerentes" %}
+                        {% elif user_type == 1 %}
+                            {% if departamento|string|trim == "Comercial / Gerentes" %}
                             <td>{{ chamado.solicitante }}</td>
                             <td>{{ chamado.usuario_abertura }}</td>
                             <td>{{ chamado.tipo }}</td>

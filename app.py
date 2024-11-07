@@ -14,8 +14,9 @@ from functools import wraps
 from redis import Redis
 import traceback
 from datetime import datetime, timedelta
-from flask_cors import CORS
+#from flask_cors import CORS
 from flask_wtf.csrf import CSRFError
+from flask import make_response
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -99,7 +100,7 @@ def load_user(user_id):
 def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if current_user.tipo_user != 1:  # tipo_user 1 = administrador
+        if current_user.tipo_user not in [2, 3]:  # tipo_user 2 = administrador
             logging.warning(f"Acesso negado ao usuario {current_user.id}. Tipo de usuario: {current_user.tipo_user}")
             flash("Você não tem permissão para acessar essa página.", "danger")
             return redirect(url_for('home'))
@@ -181,7 +182,11 @@ def login():
             logging.warning(f"usuario {username} não encontrado.")
             flash('usuario não encontrado.', 'danger')
 
-    return render_template('login.html', form=form)
+    response = make_response(render_template('login.html', form=form))
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
 
 # Página de logout
 @app.route('/logout', methods=['POST'])
@@ -197,7 +202,7 @@ def logout():
 @login_required
 def home():
     form = DummyForm()
-    if current_user.tipo_user == 1:
+    if current_user.tipo_user in [2, 3]:
         form = DummyForm()
         return render_template('index.html', user_type=current_user.tipo_user, form=form)
     elif current_user.codigo_filial != 99:
@@ -214,7 +219,7 @@ def home():
 def chamados():
     cur = mysql.connection.cursor()
 
-    if current_user.tipo_user == 1:
+    if current_user.tipo_user in [2, 3]:
         cur.execute("SELECT * FROM suporte_chamados")
 
     elif current_user.codigo_filial == 99:
@@ -257,7 +262,7 @@ def chamados():
 @login_required
 def infra_chamados():
     cur = mysql.connection.cursor()
-    if current_user.tipo_user == 1:
+    if current_user.tipo_user in [2, 3]:
         cur.execute("SELECT * FROM infra_chamados")
     else:
         cur.execute("SELECT * FROM infra_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
@@ -277,7 +282,7 @@ def infra_chamados():
 @login_required
 def transporte_chamados():
     cur = mysql.connection.cursor()
-    if current_user.tipo_user == 1:
+    if current_user.tipo_user in [2, 3]:
         cur.execute("SELECT * FROM solicitacoes_transporte")
     else:
         cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
@@ -303,7 +308,7 @@ def admin_page():
 @app.route('/admin/logs')
 @login_required
 def view_logs():
-    if current_user.tipo_user != 1:
+    if current_user.tipo_user != 2:
         return "Acesso negado", 403  # Se o usuario não for admin, retorna "Acesso negado"
 
     form = DummyForm()

@@ -18,13 +18,13 @@
         <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
         <h1>Consultas de Chamados - Gerencial</h1>
 
-            <!-- Botão de logout no canto superior direito -->
-    <div class="logout-container">
-        <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
-            {{ form.hidden_tag() }} <!-- Proteção CSRF -->
-            <button type="submit" class="logout-button">Sair</button>
-        </form>
-    </div>
+        <!-- Botão de logout no canto superior direito -->
+        <div class="logout-container">
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
+                {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+                <button type="submit" class="logout-button">Sair</button>
+            </form>
+        </div>
     </header>
 
     <main>

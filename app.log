@@ -1345,3 +1345,117 @@ flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 5 per 1 minute
 2024-11-06 17:27:47,017 INFO [app:175] usuario luis logado com sucesso.
 2024-11-06 17:27:47,049 INFO [app:93] usuario 2 carregado com sucesso.
 2024-11-06 17:27:48,572 INFO [app:93] usuario 2 carregado com sucesso.
+2024-11-06 22:50:48,920 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 22:50:56,203 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 22:51:00,476 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 22:51:04,969 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-06 22:51:05,489 INFO [app:176] usuario luis logado com sucesso.
+2024-11-06 22:51:05,573 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:51:23,992 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:51:23,992 INFO [app:195] usuario 2 fez logout.
+2024-11-06 22:53:07,462 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 22:53:34,399 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-06 22:53:34,865 INFO [app:176] usuario luis logado com sucesso.
+2024-11-06 22:53:34,948 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:53:37,480 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:53:37,481 INFO [app:195] usuario 2 fez logout.
+2024-11-06 22:54:30,107 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 22:54:34,718 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-06 22:54:35,178 INFO [app:176] usuario luis logado com sucesso.
+2024-11-06 22:54:35,260 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:54:37,852 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:54:37,852 INFO [app:195] usuario 2 fez logout.
+2024-11-06 22:55:40,062 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-06 22:55:40,505 INFO [app:176] usuario luis logado com sucesso.
+2024-11-06 22:55:40,583 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:55:42,025 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:55:44,473 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 22:55:44,473 INFO [app:195] usuario 2 fez logout.
+2024-11-06 23:00:11,671 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:00:18,407 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-06 23:00:18,884 INFO [app:176] usuario luis logado com sucesso.
+2024-11-06 23:00:19,017 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 23:00:25,088 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 23:05:43,669 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:06:04,018 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 23:07:28,968 INFO [app:94] usuario 2 carregado com sucesso.
+2024-11-06 23:07:28,968 INFO [app:195] usuario 2 fez logout.
+2024-11-06 23:07:46,174 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:07:46,526 ERROR [app:378] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1303, in __inner
+    return cast(R, flask.current_app.ensure_sync(obj)(*a, **k))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\OneDrive\Documents\GitHub\Flask4\app.py", line 151, in login
+    if not stored_password.startswith('$2b$'):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+2024-11-06 23:07:57,818 WARNING [app:383] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-06 23:08:09,372 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:08:09,877 INFO [app:161] Senha do usuario felipe atualizada para hash bcrypt.
+2024-11-06 23:08:10,242 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-06 23:08:10,354 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:08:13,246 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:08:29,763 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:08:29,763 INFO [app:195] usuario 5 fez logout.
+2024-11-06 23:09:45,515 INFO [app:129] Tentativa de login do usuario: rafaele
+2024-11-06 23:09:46,034 INFO [app:161] Senha do usuario rafaele atualizada para hash bcrypt.
+2024-11-06 23:09:46,396 INFO [app:176] usuario rafaele logado com sucesso.
+2024-11-06 23:09:46,481 INFO [app:94] usuario 6 carregado com sucesso.
+2024-11-06 23:09:48,067 INFO [app:94] usuario 6 carregado com sucesso.
+2024-11-06 23:11:28,988 INFO [app:94] usuario 6 carregado com sucesso.
+2024-11-06 23:11:28,988 INFO [app:195] usuario 6 fez logout.
+2024-11-06 23:11:35,691 INFO [app:129] Tentativa de login do usuario: jockey
+2024-11-06 23:11:36,151 INFO [app:176] usuario jockey logado com sucesso.
+2024-11-06 23:11:36,261 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:11:37,983 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:11:44,207 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:11:44,207 INFO [app:195] usuario 3 fez logout.
+2024-11-06 23:12:25,640 INFO [app:129] Tentativa de login do usuario: jockey
+2024-11-06 23:12:26,084 INFO [app:176] usuario jockey logado com sucesso.
+2024-11-06 23:12:26,163 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:12:30,153 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:12:30,153 INFO [app:195] usuario 3 fez logout.
+2024-11-06 23:12:35,356 INFO [app:129] Tentativa de login do usuario: jockey
+2024-11-06 23:12:35,845 INFO [app:176] usuario jockey logado com sucesso.
+2024-11-06 23:12:35,929 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:12:37,725 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:12:45,937 INFO [app:94] usuario 3 carregado com sucesso.
+2024-11-06 23:12:45,937 INFO [app:195] usuario 3 fez logout.
+2024-11-06 23:12:51,353 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:12:51,813 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-06 23:12:51,895 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:12:55,880 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:15:00,403 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:15:00,405 INFO [app:195] usuario 5 fez logout.
+2024-11-06 23:15:21,937 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:15:22,368 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-06 23:15:22,451 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:15:24,055 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:17:02,395 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:17:05,557 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:17:08,052 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:17:13,378 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:17:13,378 INFO [app:195] usuario 5 fez logout.
+2024-11-06 23:17:20,075 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:17:20,520 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-06 23:17:20,598 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:17:22,045 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:26:56,942 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:27:04,158 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:27:09,373 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:27:09,373 INFO [app:195] usuario 5 fez logout.
+2024-11-06 23:27:15,080 INFO [app:129] Tentativa de login do usuario: felipe
+2024-11-06 23:27:15,532 INFO [app:176] usuario felipe logado com sucesso.
+2024-11-06 23:27:15,616 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:27:16,931 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:29:13,962 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:29:17,369 INFO [app:94] usuario 5 carregado com sucesso.
+2024-11-06 23:29:35,500 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-06 23:29:37,765 INFO [app:94] usuario 5 carregado com sucesso.

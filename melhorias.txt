@@ -12,18 +12,19 @@ confirmação de logout ok
 criptografia de senhas automatico ok
 tempo de inatividade ok
 acesso a gerente de mais de uma loja ok
-acesso a gerente de mais de um setor 
-visualização para gerentes (com mais de um solicitante ou setor)
 fazer base.html com token CSRF.   !?!?!?!?
 destaque de uma linha quando clica em uma celula ok
 Não aplicar o destaque de linha ao cabeçalho e quando clicar nele não destacar ok
 quando tira o filtro de id, não volta para o filtro de status atual ok
-quando filtrar, ficar cor de linha uma sim ou nao
+quando filtrar, ficar cor de linha uma sim ou nao ok
 filtros estão trabalhando separados ok
+acesso a gerente de mais de um setor, tipo 4 
+visualização para gerentes (com mais de um solicitante ou setor)
+cabeçalho parou de classificar
 
-sempre limpar cache na tela de login
-quando deslogar, sempre voltar para tela de login
+sempre limpar cache na tela de login ok
+quando deslogar, sempre voltar para tela de login ok
 
 sql:
 ajustar tabela usuarios
-ajustar codigo filial tabelas solicitaçõesW
+ajustar codigo filial tabelas solicitações
