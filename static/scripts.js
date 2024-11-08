@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let sortDirection = 'desc'; // Direção de ordenação decrescente
     let sortedIndex = 0; // Índice da coluna ID
 
+    // Função para ordenar a tabela
+    const sortTable = (index, direction) => {
+        const rows = Array.from(table.querySelectorAll('tbody tr'));
+        rows.sort((rowA, rowB) => {
+            const cellA = rowA.cells[index].textContent.trim();
+            const cellB = rowB.cells[index].textContent.trim();
+            if (direction === 'asc') {
+                return cellA.localeCompare(cellB, 'en', { numeric: true });
+            } else {
+                return cellB.localeCompare(cellA, 'en', { numeric: true });
+            }
+        });
+        rows.forEach(row => table.querySelector('tbody').appendChild(row));
+        updateCounter(); // Atualiza o contador após a ordenação
+        updateRowColors();
+    };
+
     // Função para atualizar o contador de resultados
     const updateCounter = () => {
         const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
@@ -53,13 +70,40 @@ document.addEventListener('DOMContentLoaded', () => {
             row.classList.toggle('odd-row', index % 2 !== 0);
         });
     };
+/*
+    headers.forEach((header, index) => {
+        const existingInput = header.querySelector('input');
+        if (!existingInput) {
+            const filterInput = document.createElement('input');
+            filterInput.type = 'text';
+            filterInput.placeholder = `Filtrar ${header.textContent}`;
+
+            if (header.textContent === 'ID') {
+                filterInput.classList.add('id-filter');
+            } else if (header.textContent === 'Descrição') {
+                filterInput.classList.add('desc-filter');
+            } else {
+                filterInput.classList.add('header-filter');
+            }
+
+            header.appendChild(filterInput);
+
+            filterInput.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            filterInput.addEventListener('input', (e) => {
+                filterTable(index, e.target.value);
+            });
+        }
+    });*/
 
     idFilter.addEventListener('input', applyFilters);
 
     statusCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', applyFilters);
-    });
-
+    }); 
+/*
     headers.forEach((header, index) => {
         const existingInput = header.querySelector('input');
         if (!existingInput) {
@@ -75,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             filterInput.addEventListener('input', applyFilters);
         }
-    });
+    });*/
 
     // Marcar "Aberta", "Em Atendimento" e "Em Pausa" como padrão
     statusCheckboxes.forEach(checkbox => {
@@ -87,29 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa a tabela com os filtros aplicados
     applyFilters();
     updateRowColors();
+    updateCounter();
 
     // Se houver necessidade de ordenar a tabela ao carregar
     if (sortedIndex !== null) {
         sortTable(sortedIndex, sortDirection);
     }
 
-    // Função para ordenar a tabela
-    const sortTable = (index, direction) => {
-        const rows = Array.from(table.querySelectorAll('tbody tr'));
-        rows.sort((rowA, rowB) => {
-            const cellA = rowA.cells[index].textContent.trim();
-            const cellB = rowB.cells[index].textContent.trim();
-            if (direction === 'asc') {
-                return cellA.localeCompare(cellB, 'en', { numeric: true });
-            } else {
-                return cellB.localeCompare(cellA, 'en', { numeric: true });
-            }
-        });
-        rows.forEach(row => table.querySelector('tbody').appendChild(row));
-        updateCounter(); // Atualiza o contador após a ordenação
-        updateRowColors();
-    };
-  
     // Classifica a coluna ID automaticamente em ordem decrescente ao carregar a página
     sortTable(sortedIndex, sortDirection);
     headers[sortedIndex].classList.add('sort-desc'); // Marca visualmente a coluna classificada
@@ -167,6 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
             row.style.display = value === "" ? '' : (cell.textContent.trim() === value ? '' : 'none');
         });
         updateCounter(); // Atualiza o contador após o filtro
+        updateRowColors();
+        applyFilters();
     };
 
     idFilter.addEventListener('input', (e) => {
@@ -204,6 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         updateCounter(); // Atualiza o contador após o filtro por status
+        updateRowColors();
+        applyFilters();
     };
 
     // Filtra a tabela inicialmente com os checkboxes marcados
@@ -227,6 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
             row.style.display = match ? '' : 'none';
         });
         updateCounter(); // Atualiza o contador após o filtro
+        updateRowColors();
+        applyFilters();
     };
 
     headers.forEach((header, index) => {
@@ -258,7 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCounter(); // Atualiza o contador inicialmente
-    
+    updateRowColors();
+    applyFilters();    
 });
 
 document.addEventListener('DOMContentLoaded', function() {

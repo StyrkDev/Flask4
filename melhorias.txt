@@ -20,7 +20,7 @@ quando filtrar, ficar cor de linha uma sim ou nao ok
 filtros estão trabalhando separados ok
 visualização para gerentes (com mais de um solicitante ou setor) , tipo 4 ok
 acesso a gerente de mais de um setor
-cabeçalho parou de classificar quando clica
+cabeçalho parou de classificar quando clica ok
 fazer recuperação de senha
 
 sempre limpar cache na tela de login ok
@@ -28,4 +28,4 @@ quando deslogar, sempre voltar para tela de login ok
 
 sql:
 ajustar tabela usuarios ok
-ajustar codigo filial tabelas solicitações
+ajustar codigo filial tabelas solicitações ok
