@@ -1861,3 +1861,26 @@ TypeError: The view function for 'chamados' did not return a valid response. The
 2024-11-07 22:09:53,824 INFO [app:94] usuario 1 carregado com sucesso.
 2024-11-07 22:10:31,380 INFO [app:94] usuario 1 carregado com sucesso.
 2024-11-07 22:10:32,907 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 22:19:56,671 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 22:20:12,250 WARNING [app:383] Página não encontrada: http://localhost:8279/android-chrome-192x192.png
+2024-11-07 22:20:12,250 WARNING [app:383] Página não encontrada: http://localhost:8279/android-chrome-512x512.png
+2024-11-07 22:20:19,978 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 22:20:20,474 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 22:20:20,559 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 22:20:22,709 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 22:22:57,541 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 22:22:57,541 INFO [app:195] usuario 1 fez logout.
+2024-11-07 23:07:24,146 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 23:07:27,181 WARNING [app:383] Página não encontrada: http://localhost:8279/android-chrome-192x192.png
+2024-11-07 23:07:27,200 WARNING [app:383] Página não encontrada: http://localhost:8279/android-chrome-512x512.png
+2024-11-07 23:10:54,091 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 23:14:31,755 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 23:15:51,420 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 23:16:08,304 INFO [app:129] Tentativa de login do usuario: luis
+2024-11-07 23:16:08,779 INFO [app:176] usuario luis logado com sucesso.
+2024-11-07 23:16:08,860 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 23:16:13,944 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 23:20:35,664 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-07 23:20:50,085 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 23:21:07,564 INFO [app:94] usuario 1 carregado com sucesso.
+2024-11-07 23:21:16,727 INFO [app:94] usuario 1 carregado com sucesso.
