@@ -72,10 +72,11 @@ login_manager.login_view = 'login'
 
 # Classe do usuario
 class User(UserMixin):
-    def __init__(self, id, codigo_filial, tipo_user):
+    def __init__(self, id, codigo_filial, tipo_user, cod_setor=None):
         self.id = id
         self.codigo_filial = codigo_filial
         self.tipo_user = tipo_user  # Inclui o tipo de usuario
+        self.cod_setor = cod_setor
 
 # Carregar usuario
 @login_manager.user_loader
@@ -92,7 +93,12 @@ def load_user(user_id):
 
     if user_data:
         logging.info(f"usuario {user_id} carregado com sucesso.")
-        return User(id=user_data['id'], codigo_filial=user_data['codigo_filial'], tipo_user=user_data['tipo_user'])
+        return User(
+            id=user_data['id'],
+            codigo_filial=user_data['codigo_filial'],
+            tipo_user=user_data['tipo_user'],
+            cod_setor=user_data.get('cod_setor')  # Fetch cod_setor from the database
+        )
     logging.warning(f"usuario {user_id} não encontrado.")
     return None
 
@@ -202,7 +208,7 @@ def logout():
 @login_required
 def home():
     form = DummyForm()
-    if current_user.tipo_user in [2, 3]:
+    if current_user.tipo_user in [2, 3, 5]:
         form = DummyForm()
         return render_template('index.html', user_type=current_user.tipo_user, form=form)
     elif current_user.codigo_filial != 99:
@@ -212,33 +218,22 @@ def home():
         form = DummyForm()
         return render_template('index.html', user_type=current_user.tipo_user, form=form)
 
-
-# Página de consulta para suporte_chamados
 @app.route('/chamados')
 @login_required
 def chamados():
     cur = mysql.connection.cursor()
 
-    if current_user.tipo_user in [2, 3]:
+    if current_user.tipo_user in [2, 3, 5]:
         cur.execute("SELECT * FROM suporte_chamados")
 
-    elif current_user.codigo_filial == 99:
-        setores = session.get('setor', '').split(',')  # Lista de setores separados por vírgula
-        if setores:
-            queries = []
-            params = []
-            for s in setores:
-                s = s.strip()  # Remove espaços
-                queries.append("REPLACE(TRIM(departamento), '\\n', '') REGEXP CONCAT('(^|,)', %s, '(,|$)')")
-                params.append(s)
-            query = f"SELECT * FROM suporte_chamados WHERE {' OR '.join(queries)}"
-            cur.execute(query, params)
-            
-            # Exibir os resultados antes de aplicar a lógica de filtragem
-            print("Departamentos disponíveis no banco de dados:", [chamado['departamento'] for chamado in dados])
-
-        else:
-            cur.execute("SELECT * FROM suporte_chamados")
+    elif current_user.codigo_filial == '99':
+        # Usar cod_setor diretamente da tabela usuarios
+        setores = current_user.cod_setor  # Assumindo que cod_setor pode ser uma lista ou string separada por vírgulas
+        #print(f"Tipo de usuário: {current_user.cod_setor}")
+        cur.execute("""
+            SELECT * FROM suporte_chamados 
+            WHERE FIND_IN_SET(cod_setor, %s)
+        """, [setores])
 
     else:
         filiais = current_user.codigo_filial
@@ -246,23 +241,21 @@ def chamados():
 
     dados = cur.fetchall()
     cur.close()
-
+    
     # Formatando a data de abertura para dd/mm/aaaa
     for chamado in dados:
         if 'data_abertura' in chamado and chamado['data_abertura']:
             chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
 
     form = DummyForm()
-    setor = session.get('setor', '')
-    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, setor=setor, form=form)
-
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
 
 # Página de consulta para infra_chamados
 @app.route('/infra_chamados')
 @login_required
 def infra_chamados():
     cur = mysql.connection.cursor()
-    if current_user.tipo_user in [2, 3]:
+    if current_user.tipo_user in [2, 3, 5]:
         cur.execute("SELECT * FROM infra_chamados")
     else:
         cur.execute("SELECT * FROM infra_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])

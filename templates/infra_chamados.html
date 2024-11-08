@@ -60,7 +60,7 @@
                         <th>Status</th>
                         <th>Data Abertura</th>
                         <th>Horario Abertura</th>
-                        <p>Setor: {{ departamento }}</p>
+                        <p> </p>
 
                         {% if user_type in [2, 3] %}
                         <th>Código Filial</th>
@@ -73,7 +73,7 @@
                         <th>Anydesk</th>
                         <th>Chamado</th>
         
-                        {% elif user_type == 4 %}
+                        {% elif user_type in [4, 5] %}
                         <th>Solicitante</th>
                         <th>Nome</th>
                         <th>Assunto</th>
@@ -104,7 +104,7 @@
                         <td>{{ chamado.anydesk }}</td>
                         <td>{{ chamado.chamado_ocomon }}</td>
         
-                        {% elif user_type == 4 %}
+                        {% elif user_type in [4, 5] %}
                         <td>{{ chamado.solicitante }}</td>
                         <td>{{ chamado.usuario_abertura }}</td>
                         <td>{{ chamado.tipo }}</td>

@@ -234,7 +234,7 @@ table td.id-column {
 /* Contador de resultados */
 #counter-container {
     position: fixed;
-    top: 10px; /* Ajuste conforme necessário */
+    top: 8px; /* Ajuste conforme necessário */
     left: 310px;
     z-index: 1100; /* Garantir que esteja acima de outros elementos */
     font-size: 14px;

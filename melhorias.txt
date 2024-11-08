@@ -19,7 +19,7 @@ quando tira o filtro de id, não volta para o filtro de status atual ok
 quando filtrar, ficar cor de linha uma sim ou nao ok
 filtros estão trabalhando separados ok
 visualização para gerentes (com mais de um solicitante ou setor) , tipo 4 ok
-acesso a gerente de mais de um setor
+acesso a gerente de mais de um setor ok
 cabeçalho parou de classificar quando clica ok
 fazer recuperação de senha
 colocar logo em todos html
