@@ -2085,3 +2085,748 @@ AttributeError: 'User' object has no attribute 'cod_setor'
 2024-11-08 15:49:38,317 INFO [app:95] usuario 327 carregado com sucesso.
 2024-11-08 15:49:56,646 INFO [app:95] usuario 327 carregado com sucesso.
 2024-11-08 15:49:56,646 INFO [app:201] usuario 327 fez logout.
+2024-11-12 08:34:51,728 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 08:35:03,774 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-12 08:35:04,248 INFO [app:167] Senha do usuario luis atualizada para hash bcrypt.
+2024-11-12 08:35:04,578 WARNING [app:185] Tentativa de login falhou para luis: senha inválida.
+2024-11-12 08:35:12,438 INFO [app:135] Tentativa de login do usuario: teste
+2024-11-12 08:35:12,456 WARNING [app:188] usuario teste não encontrado.
+2024-11-12 08:48:39,303 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 08:48:39,304 INFO [app:363] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 08:48:44,674 INFO [app:135] Tentativa de login do usuario: Luis
+2024-11-12 08:48:45,091 WARNING [app:185] Tentativa de login falhou para Luis: senha inválida.
+2024-11-12 09:00:53,349 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 09:00:53,350 INFO [app:363] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 09:00:56,727 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-12 09:00:57,090 INFO [app:167] Senha do usuario luis atualizada para hash bcrypt.
+2024-11-12 09:00:57,394 INFO [app:182] usuario luis logado com sucesso.
+2024-11-12 09:00:57,421 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 09:01:00,355 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 09:01:07,836 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 09:01:07,836 INFO [app:201] usuario 231 fez logout.
+2024-11-12 09:45:14,170 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 09:45:14,172 INFO [app:363] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 09:45:25,169 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-12 09:45:25,593 INFO [app:182] usuario luis logado com sucesso.
+2024-11-12 09:45:25,622 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 09:56:32,673 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 09:56:32,673 INFO [app:363] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 09:58:27,022 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 10:00:28,573 INFO [app:135] Tentativa de login do usuario: rafaele
+2024-11-12 10:00:29,134 INFO [app:182] usuario rafaele logado com sucesso.
+2024-11-12 10:00:29,213 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:00:31,963 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:02:37,583 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:07:32,177 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:12:02,081 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 10:12:08,819 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:13:46,734 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:13:46,734 INFO [app:201] usuario 327 fez logout.
+2024-11-12 10:16:51,381 INFO [app:135] Tentativa de login do usuario: Dyhonatan
+2024-11-12 10:16:51,948 INFO [app:182] usuario Dyhonatan logado com sucesso.
+2024-11-12 10:16:52,100 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:16:53,497 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:20:14,077 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:20:33,634 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:20:44,724 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:20:57,126 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:21:07,454 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:27:01,924 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:28:21,334 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:29:20,379 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:30:51,096 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:31:49,936 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:32:03,442 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:32:35,797 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:33:29,899 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:33:38,890 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:33:49,913 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:35:09,177 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:35:57,702 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:36:58,480 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:37:08,911 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:42:39,803 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 10:42:43,432 INFO [app:95] usuario 183 carregado com sucesso.
+2024-11-12 10:42:43,432 INFO [app:201] usuario 183 fez logout.
+2024-11-12 10:43:01,594 INFO [app:135] Tentativa de login do usuario: Felipe
+2024-11-12 10:43:01,973 INFO [app:182] usuario Felipe logado com sucesso.
+2024-11-12 10:43:01,999 INFO [app:95] usuario 210 carregado com sucesso.
+2024-11-12 10:43:05,726 INFO [app:95] usuario 210 carregado com sucesso.
+2024-11-12 10:43:17,718 INFO [app:95] usuario 210 carregado com sucesso.
+2024-11-12 10:43:17,718 INFO [app:201] usuario 210 fez logout.
+2024-11-12 10:43:34,624 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 10:43:34,988 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 10:43:35,010 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:43:37,100 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:43:37,110 ERROR [app:371] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 281, in transporte_chamados
+    cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'codigo_filial' in 'where clause'")
+
+2024-11-12 10:43:37,164 WARNING [app:376] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-12 10:43:37,182 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:43:39,625 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:43:42,550 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 10:46:04,806 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 10:46:09,203 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 10:46:12,217 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:07:18,738 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 11:07:18,738 INFO [app:376] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 11:24:34,638 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 11:24:34,639 INFO [app:376] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 11:24:37,513 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 11:24:37,936 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 11:24:37,966 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:24:41,075 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:25:04,244 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 11:25:28,116 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:25:39,037 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:25:39,987 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:25:39,997 ERROR [app:384] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 294, in transporte_chamados
+    cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'codigo_filial' in 'where clause'")
+
+2024-11-12 11:36:13,493 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 11:36:13,902 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 11:36:13,930 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:36:15,266 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:36:15,276 ERROR [app:384] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 294, in transporte_chamados
+    elif current_user.codigo_filial == '99':
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'codigo_filial' in 'where clause'")
+
+2024-11-12 11:36:17,453 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:50:25,112 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 11:50:45,301 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 11:50:45,800 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 11:50:45,844 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:50:47,302 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:51:11,474 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:51:11,474 INFO [app:201] usuario 327 fez logout.
+2024-11-12 11:55:31,671 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 11:55:42,314 INFO [app:135] Tentativa de login do usuario: rafaele
+2024-11-12 11:55:42,720 INFO [app:182] usuario rafaele logado com sucesso.
+2024-11-12 11:55:42,760 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 11:55:44,250 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 12:55:45,464 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 12:55:45,465 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 14:27:51,436 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-12 14:27:52,861 INFO [app:182] usuario luis logado com sucesso.
+2024-11-12 14:27:53,048 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 14:27:55,610 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 14:28:22,256 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 14:28:22,256 INFO [app:201] usuario 231 fez logout.
+2024-11-12 15:26:31,693 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-12 15:27:31,043 INFO [app:135] Tentativa de login do usuario: Erica
+2024-11-12 15:27:31,631 INFO [app:167] Senha do usuario Erica atualizada para hash bcrypt.
+2024-11-12 15:27:31,959 INFO [app:182] usuario Erica logado com sucesso.
+2024-11-12 15:27:31,991 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:33,242 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:42,072 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:43,443 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:44,012 WARNING [app:397] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-12 15:27:44,030 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:50,447 INFO [app:95] usuario 329 carregado com sucesso.
+2024-11-12 15:27:50,447 INFO [app:201] usuario 329 fez logout.
+2024-11-12 15:28:02,903 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 15:28:03,260 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 15:28:03,301 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 15:28:05,354 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 15:39:12,613 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 15:39:12,613 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 15:43:17,434 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-12 15:43:17,816 INFO [app:182] usuario luis logado com sucesso.
+2024-11-12 15:43:17,843 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 15:43:20,435 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 15:48:15,891 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 15:55:10,466 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 15:55:24,027 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 284, in decorated_view
+    elif not current_user.is_authenticated:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\local.py", line 318, in __get__
+    obj = instance._get_current_object()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\local.py", line 526, in _get_current_object
+    return get_name(local())
+                    ^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+                                      ^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 370, in _get_user
+    current_app.login_manager._load_user()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 84, in load_user
+    cur = mysql.connection.cursor()
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_mysqldb\__init__.py", line 109, in connection
+    ctx.mysql_db = self.connect
+                   ^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_mysqldb\__init__.py", line 97, in connect
+    return MySQLdb.connect(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\MySQLdb\connections.py", line 195, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (2002, "Can't connect to server on '131.255.239.246' (138)")
+
+2024-11-12 15:55:31,069 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 15:56:22,573 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-12 16:16:48,893 INFO [csrf:263] The CSRF session token is missing.
+2024-11-12 16:16:48,894 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-12 16:17:00,141 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 16:17:00,590 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 16:17:00,614 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:17:01,807 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:17:06,062 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:17:07,399 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:17:16,491 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:17:16,492 INFO [app:201] usuario 327 fez logout.
+2024-11-12 16:19:15,996 INFO [app:135] Tentativa de login do usuario: Sergio
+2024-11-12 16:19:16,368 INFO [app:167] Senha do usuario Sergio atualizada para hash bcrypt.
+2024-11-12 16:19:16,679 INFO [app:182] usuario Sergio logado com sucesso.
+2024-11-12 16:19:16,704 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:17,988 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:22,661 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:24,386 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:34,297 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:35,705 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:19:36,690 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:21:38,670 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:21:38,670 INFO [app:201] usuario 222 fez logout.
+2024-11-12 16:21:44,473 INFO [app:135] Tentativa de login do usuario: Ana
+2024-11-12 16:21:44,836 INFO [app:182] usuario Ana logado com sucesso.
+2024-11-12 16:21:44,859 INFO [app:95] usuario 209 carregado com sucesso.
+2024-11-12 16:21:48,482 INFO [app:95] usuario 209 carregado com sucesso.
+2024-11-12 16:21:48,482 INFO [app:201] usuario 209 fez logout.
+2024-11-12 16:23:42,212 INFO [app:135] Tentativa de login do usuario: Sergio
+2024-11-12 16:23:42,599 INFO [app:182] usuario Sergio logado com sucesso.
+2024-11-12 16:23:42,624 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:23:44,049 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:21,829 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:23,344 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:29,135 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:31,044 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:39,638 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:46,103 INFO [app:95] usuario 222 carregado com sucesso.
+2024-11-12 16:24:46,103 INFO [app:201] usuario 222 fez logout.
+2024-11-12 16:24:54,027 INFO [app:135] Tentativa de login do usuario: Sitio Cercado
+2024-11-12 16:24:54,431 INFO [app:182] usuario Sitio Cercado logado com sucesso.
+2024-11-12 16:24:54,454 INFO [app:95] usuario 169 carregado com sucesso.
+2024-11-12 16:25:18,113 INFO [app:95] usuario 169 carregado com sucesso.
+2024-11-12 16:25:30,849 INFO [app:95] usuario 169 carregado com sucesso.
+2024-11-12 16:34:04,542 INFO [app:95] usuario 169 carregado com sucesso.
+2024-11-12 16:34:04,542 INFO [app:201] usuario 169 fez logout.
+2024-11-12 16:34:11,795 INFO [app:135] Tentativa de login do usuario: rafaele
+2024-11-12 16:34:12,193 INFO [app:182] usuario rafaele logado com sucesso.
+2024-11-12 16:34:12,304 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:34:18,047 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:34:18,047 INFO [app:201] usuario 327 fez logout.
+2024-11-12 16:34:27,339 INFO [app:135] Tentativa de login do usuario: Rafaele
+2024-11-12 16:34:27,694 INFO [app:182] usuario Rafaele logado com sucesso.
+2024-11-12 16:34:27,717 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:34:33,374 INFO [app:95] usuario 327 carregado com sucesso.
+2024-11-12 16:34:33,375 INFO [app:201] usuario 327 fez logout.
+2024-11-13 08:43:56,482 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 08:44:02,811 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 08:44:03,254 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 08:44:03,282 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:44:05,157 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:44:29,349 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 08:44:33,371 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:51:43,642 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:56:39,497 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 08:56:43,190 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:57:11,797 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:57:16,500 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 08:57:18,247 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:57:58,031 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:58:07,159 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:58:51,531 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 08:58:52,477 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:58:56,365 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 08:59:59,763 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:00:02,046 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:02:14,660 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:02:18,127 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:02:34,372 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:04:14,551 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:04:14,552 INFO [app:201] usuario 231 fez logout.
+2024-11-13 09:04:22,368 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 09:04:22,748 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 09:04:22,782 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:04:24,599 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:04:26,262 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:04:26,263 INFO [app:201] usuario 231 fez logout.
+2024-11-13 09:05:00,723 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:05:07,422 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 09:05:07,808 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 09:05:07,830 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:05:09,736 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:08:29,528 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:08:32,241 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:08:34,573 WARNING [app:397] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-13 09:08:34,594 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:28:21,268 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 09:28:21,270 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 09:28:26,416 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 09:28:26,899 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 09:28:26,922 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:28:29,295 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:41:47,802 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:41:57,431 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 09:41:57,858 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 09:41:57,881 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:42:01,690 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:42:50,430 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:43:16,244 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:43:25,824 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:44:41,742 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:44:46,334 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:44:47,881 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:44:49,175 WARNING [app:397] Página não encontrada: http://localhost:8279/favicon.ico
+2024-11-13 09:44:49,198 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:45:41,318 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:45:45,604 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:49:26,818 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:49:27,503 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:54:11,219 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:57:07,562 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:57:12,046 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:57:42,758 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 09:59:13,931 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 09:59:16,917 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:00:47,786 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:00:51,225 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:20:17,345 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 10:20:17,353 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 10:20:21,668 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 10:20:22,092 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 10:20:22,118 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:20:23,824 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:27:49,249 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:27:51,715 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:29:14,111 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:31:49,986 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:33:02,801 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:35:36,387 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:35:47,579 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:36:49,378 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:37:21,954 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:39:38,161 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:40:22,205 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:40:22,674 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:40:39,720 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:42:57,951 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:57:15,054 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 10:57:21,408 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 10:57:21,808 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 10:57:21,834 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:57:22,792 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 10:59:01,072 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:00:58,878 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:01:03,755 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:03:01,962 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:03:03,493 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:04:58,592 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:05:01,426 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:05:17,191 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:05:18,666 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:06:33,275 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:06:34,797 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:08:54,457 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:08:55,945 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:10:20,376 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:10:23,063 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:12:23,829 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:12:25,445 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:14:00,181 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:14:03,136 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:14:46,542 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:15:31,200 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:15:31,257 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 251, in chamados
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\chamados.html", line 41, in top-level template code
+    <td>{{ chamado.data_abertura }}</td>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'chamado' is undefined
+
+2024-11-13 11:15:43,930 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:15:44,011 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 251, in chamados
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\chamados.html", line 41, in top-level template code
+    <div id="resumo-content"></div>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'chamado' is undefined
+
+2024-11-13 11:15:45,569 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:15:45,655 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\app.py", line 251, in chamados
+    return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\luis.vieira\Documents\GitHub\Flask4\templates\chamados.html", line 41, in top-level template code
+    <div id="resumo-content"></div>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\jinja2\environment.py", line 487, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'chamado' is undefined
+
+2024-11-13 11:15:50,136 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:15:51,172 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:21:09,142 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:22:46,945 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:23:34,649 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:23:53,351 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:24:58,089 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:25:00,699 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:26:49,831 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:26:54,383 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:27:24,851 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:27:29,459 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:31:58,492 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:31:59,684 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:32:11,300 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:33:15,041 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:34:34,855 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:40:28,378 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:40:32,831 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:40:43,721 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:42:12,906 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:42:16,736 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:43:54,053 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:43:55,899 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:46:59,998 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:47:05,829 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:47:16,858 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:47:19,851 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: chamados
+2024-11-13 11:47:19,854 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-11-13 11:47:19,895 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:47:26,085 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: chamados
+2024-11-13 11:47:26,087 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-11-13 11:47:26,106 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:47:55,200 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 11:48:03,605 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: chamados
+2024-11-13 11:48:03,607 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2024-11-13 11:48:03,654 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:59:56,753 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 11:59:57,155 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 11:59:57,178 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 11:59:58,413 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:01:12,936 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:01:13,547 ERROR [app:416] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2024-11-13 12:01:18,540 ERROR [app:416] Server Error: Traceback (most recent call last):
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luis.vieira\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2024-11-13 12:07:59,209 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:08:03,488 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:11:21,128 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:11:22,397 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:13:26,009 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:13:28,827 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:18:11,385 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:18:14,075 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:22:25,352 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:22:28,312 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:23:10,483 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:23:11,941 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:25:30,639 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:25:33,515 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:26:03,039 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 12:26:04,146 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 12:26:34,115 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 13:42:39,575 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 13:42:39,576 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 13:42:45,099 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 13:42:45,543 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 13:42:45,589 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 13:46:23,761 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 13:47:56,160 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 13:48:05,573 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 13:48:24,217 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:08:35,060 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 14:08:35,063 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 14:11:58,152 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 14:11:58,607 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 14:11:58,631 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:12:00,470 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:13:14,223 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:13:47,688 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:14:08,457 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:44:35,266 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 14:44:40,124 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 14:44:41,186 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 14:44:41,360 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:44:43,056 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:45:39,825 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:45:39,826 INFO [app:201] usuario 231 fez logout.
+2024-11-13 14:47:45,612 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 14:47:45,998 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 14:47:46,026 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:47:48,303 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:48:42,042 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:48:53,208 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:49:05,774 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:50:58,667 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:00,806 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:03,671 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:05,520 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:06,777 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:08,903 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 14:51:10,236 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:03:24,968 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 15:03:24,968 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 15:32:08,711 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 15:32:13,237 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 15:32:13,237 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-13 15:32:17,108 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-13 15:32:17,558 INFO [app:182] usuario luis logado com sucesso.
+2024-11-13 15:32:17,589 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:32:20,280 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:39:35,008 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 15:39:38,279 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:40:08,782 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:48:20,525 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-13 15:48:37,098 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:49:02,859 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 15:49:03,868 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-13 16:05:14,047 INFO [csrf:263] The CSRF session token is missing.
+2024-11-13 16:05:14,048 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-14 11:05:04,357 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-11-14 11:05:38,226 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-14 11:05:38,679 INFO [app:182] usuario luis logado com sucesso.
+2024-11-14 11:05:38,703 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:05:41,636 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:05:48,818 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:23:59,415 INFO [csrf:263] The CSRF session token is missing.
+2024-11-14 11:23:59,415 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-11-14 11:31:24,358 INFO [app:135] Tentativa de login do usuario: luis
+2024-11-14 11:31:24,696 INFO [app:182] usuario luis logado com sucesso.
+2024-11-14 11:31:24,720 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:31:25,682 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:31:47,804 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:36:37,879 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:42:55,366 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:42:57,186 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:42:58,579 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:43:02,750 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:43:03,891 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:43:46,728 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:44:24,349 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 11:50:18,832 INFO [app:95] usuario 231 carregado com sucesso.
+2024-11-14 13:21:28,302 INFO [csrf:263] The CSRF session token is missing.
+2024-11-14 13:21:28,302 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-12-11 13:57:24,514 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2024-12-11 13:58:19,336 INFO [app:135] Tentativa de login do usuario: luis
+2024-12-11 13:58:19,793 INFO [app:182] usuario luis logado com sucesso.
+2024-12-11 13:58:19,817 INFO [app:95] usuario 231 carregado com sucesso.
+2024-12-11 13:58:32,481 INFO [app:95] usuario 231 carregado com sucesso.
+2024-12-11 14:17:16,479 INFO [csrf:263] The CSRF session token is missing.
+2024-12-11 14:17:16,479 INFO [app:384] Um usuário não autenticado foi deslogado por inatividade
+2024-12-11 14:17:21,674 INFO [app:135] Tentativa de login do usuario: Dyhonatan
+2024-12-11 14:17:22,111 INFO [app:182] usuario Dyhonatan logado com sucesso.
+2024-12-11 14:17:22,136 INFO [app:95] usuario 183 carregado com sucesso.
+2024-12-11 14:17:23,381 INFO [app:95] usuario 183 carregado com sucesso.

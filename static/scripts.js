@@ -372,3 +372,92 @@ setInterval(() => {
 
 // Reiniciar o tempo de inatividade ao detectar movimento ou tecla pressionada
 document.onmousemove = document.onkeydown = () => idleTime = 0;
+
+// Função para calcular e exibir resumos
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener to the "Resumo" button to open the modal
+    document.getElementById('resumo-button').addEventListener('click', () => {
+        calcularResumos();
+    });
+
+    // Add event listener to the "Close" button to close the modal
+    document.getElementById('close-resumo').addEventListener('click', () => {
+        document.getElementById('resumo-modal').style.display = 'none';
+    });
+
+    // Add event listener to the "Filter" button to apply filters
+    document.getElementById('filter-button').addEventListener('click', () => {
+        calcularResumos(true);
+    });
+});
+
+function calcularResumos(filtrarPorData = false) {
+    const table = document.getElementById('chamados-table');
+    const resumoPorSetor = {};
+    const resumoPorFilial = {};
+    const resumoPorStatus = {};
+
+    // Get start and end dates
+    const startDateValue = document.getElementById('start-date').value;
+    const endDateValue = document.getElementById('end-date').value;
+    const startDate = new Date(startDateValue);
+    const endDate = new Date(endDateValue);
+
+    // Get selected statuses only for the summary
+    const resumoStatusCheckboxes = document.querySelectorAll('.summary-status-checkbox');
+    const selectedResumoStatuses = Array.from(resumoStatusCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    // Calculate summaries
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const dateText = row.cells[2].textContent.trim(); // Assuming column 3 is the opening date
+        const date = new Date(dateText);
+        const status = row.cells[1].textContent.trim().toLowerCase();
+
+        // Filter by date and status for the summary
+        const matchesDate = !filtrarPorData || 
+            ((isNaN(startDate) || date >= startDate) && (isNaN(endDate) || date <= endDate));
+        const matchesResumoStatus = selectedResumoStatuses.length === 0 || selectedResumoStatuses.includes(status);
+
+        // Ensure filtering by either date or status
+        if (matchesDate && matchesResumoStatus) {
+            const setor = row.cells[5].textContent.trim();
+            const filial = row.cells[4].textContent.trim();
+
+            if (status) {
+                resumoPorStatus[status] = (resumoPorStatus[status] || 0) + 1;
+            }
+            if (setor) {
+                resumoPorSetor[setor] = (resumoPorSetor[setor] || 0) + 1;
+            }
+            if (filial) {
+                resumoPorFilial[filial] = (resumoPorFilial[filial] || 0) + 1;
+            }
+        }
+    });
+
+    // Sort and create summary content
+    const sortedStatus = Object.entries(resumoPorStatus).sort((a, b) => b[1] - a[1]);
+    const sortedSetor = Object.entries(resumoPorSetor).sort((a, b) => b[1] - a[1]);
+    const sortedFilial = Object.entries(resumoPorFilial).sort((a, b) => b[1] - a[1]);
+
+    let resumoContent = "<div class='resumo-column'><h3>Resumo por Status</h3><ul>";
+    sortedStatus.forEach(([status, count]) => {
+        resumoContent += `<li>${status}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Setor</h3><ul>";
+    sortedSetor.forEach(([setor, count]) => {
+        resumoContent += `<li>${setor}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Código Filial</h3><ul>";
+    sortedFilial.forEach(([filial, count]) => {
+        resumoContent += `<li>${filial}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div>";
+
+    // Display the summary in the dialog box
+    document.getElementById('resumo-content').innerHTML = resumoContent;
+    document.getElementById('resumo-modal').style.display = 'block';
+}

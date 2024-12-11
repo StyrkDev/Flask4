@@ -255,18 +255,31 @@ def chamados():
 @login_required
 def infra_chamados():
     cur = mysql.connection.cursor()
+
     if current_user.tipo_user in [2, 3, 5]:
         cur.execute("SELECT * FROM infra_chamados")
+
+    elif current_user.codigo_filial == '99':
+        # Usar cod_setor diretamente da tabela usuarios
+        setores = current_user.cod_setor  # Assumindo que cod_setor pode ser uma lista ou string separada por vírgulas
+        #print(f"Tipo de usuário: {current_user.cod_setor}")
+        cur.execute("""
+            SELECT * FROM infra_chamados 
+            WHERE FIND_IN_SET(cod_setor, %s)
+        """, [setores])
+
     else:
-        cur.execute("SELECT * FROM infra_chamados WHERE codigo_filial = %s", [current_user.codigo_filial])
+        filiais = current_user.codigo_filial
+        cur.execute("SELECT * FROM infra_chamados WHERE FIND_IN_SET(codigo_filial, %s)", [filiais])
+
     dados = cur.fetchall()
     cur.close()
-
+    
     # Formatando a data de abertura para dd/mm/aaaa
     for chamado in dados:
         if 'data_abertura' in chamado and chamado['data_abertura']:
             chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
-
+            
     form = DummyForm()
     return render_template('infra_chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
 
@@ -275,10 +288,18 @@ def infra_chamados():
 @login_required
 def transporte_chamados():
     cur = mysql.connection.cursor()
-    if current_user.tipo_user in [2, 3]:
+    if current_user.tipo_user in [2, 3, 5]:
         cur.execute("SELECT * FROM solicitacoes_transporte")
-    else:
-        cur.execute("SELECT * FROM solicitacoes_transporte WHERE codigo_filial = %s", [current_user.codigo_filial])
+
+    elif current_user.codigo_filial == '99':
+        # Usar cod_setor diretamente da tabela usuarios
+        setores = current_user.cod_setor  # Assumindo que cod_setor pode ser uma lista ou string separada por vírgulas
+        #print(f"Tipo de usuário: {current_user.cod_setor}")
+        cur.execute("""
+            SELECT * FROM solicitacoes_transporte 
+            WHERE FIND_IN_SET(cod_setor, %s)
+        """, [setores])
+       
     dados = cur.fetchall()
     cur.close()
 

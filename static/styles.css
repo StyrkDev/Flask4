@@ -24,7 +24,7 @@ header {
     background-color: #121212;
     color: #fff;
     padding: 1px;
-    box-shadow: 0px 33x 2px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0px 33px 2px rgba(0, 0, 0, 0.2);*/
     z-index: 1000;
     box-sizing: border-box;
     text-align: left;
@@ -54,6 +54,15 @@ header {
 
 .status-filter input[type="checkbox"] {
     margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.status-checkbox,
+.status-filter label {
+    cursor: pointer;
 }
 
 main {
@@ -214,6 +223,9 @@ table td.id-column {
     top: 10px;
     right: 10px; /* Garantir que fique sempre no canto direito */
     z-index: 1100; /* Garantir que esteja acima de outros elementos */
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens no início do contêiner */
+    gap: 10px; /* Espaçamento entre os botões */
 }
 
 .logout-button {
@@ -272,4 +284,89 @@ table tr {
 
 tr:hover {
     background-color: #333; /* Cor de fundo ao passar o mouse */
+}
+
+#resumo-button {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;    
+}
+
+#resumo-button:hover {
+    background-color: #45a049; /* Verde escuro */
+}
+
+#resumo-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 800px;
+    max-height: 80vh; /* Altura máxima de 80% da altura da viewport */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+}
+
+#resumo-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que as colunas se ajustem */
+}
+
+.resumo-column {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 200px; /* Largura mínima para cada coluna */
+}
+
+.resumo-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resumo-column h3 {
+    text-align: center;
+}
+
+#close-resumo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#close-resumo:hover {
+    background-color: #d32f2f; /* Vermelho escuro */
+}
+
+#filter-button {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#filter-button:hover {
+    background-color: #0056b3; /* Azul escuro */
 }

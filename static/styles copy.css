@@ -1,0 +1,307 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+#filter-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    color: #fff;
+    padding: 1px;
+    box-shadow: 0px 33px 2px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 10px;
+    left: 2rem;
+}
+
+#filter-container input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 1px;
+    width: 100px;
+    margin-right: 0.5rem;
+    font-size: 10px;
+}
+
+.status-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.status-filter label {
+    display: flex;
+    align-items: center;
+}
+
+.status-filter input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.status-checkbox,
+.status-filter label {
+    cursor: pointer;
+}
+
+main {
+    padding: 2rem;
+    margin-top: 0px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #121212;
+    color: #ffffff;
+    position: sticky;
+    top: 33px;
+    z-index: 100;
+    flex-direction: column; /* Garante que o texto e o filtro fiquem em colunas (um embaixo do outro) */
+    align-items: center; /* Centraliza o texto e o filtro horizontalmente */
+    /*text-align: center;  Centraliza o texto no cabeçalho */
+}
+
+th.scrolled {
+    top: 29px;
+}
+
+th input {
+    display: block; /* Garante que o input ocupe uma linha inteira abaixo do texto */
+    margin-top: 5px; /* Dá espaço entre o texto do cabeçalho e o input */
+    width: 100%; /* Faz o input ocupar toda a largura da célula */
+    /*box-sizing: border-box;  Inclui padding e borda dentro da largura total */
+}
+
+/*tr:nth-child(even) {
+    background-color: #2c2c2c;
+}*/
+
+tr:hover {
+    background-color: #333;
+}
+
+table th {
+    cursor: pointer;
+}
+
+table th.sort-asc::after {
+    content: " ↑";
+}
+
+table th.sort-desc::after {
+    content: " ↓";
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    background-color: #121212;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+.back-to-index {
+    position: fixed;
+    top: -2px;
+    left: 0px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 5px ;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.back-to-index i, .back-to-index .material-icons {
+    font-size: 20px;
+    margin-right: 0.5px;
+}
+
+.back-to-index:hover {
+    background-color: #0056b3;
+}
+
+table th.id-column,
+table td.id-column {
+    width: 10px;
+}
+
+.header-filter {
+    width: 150px;
+    padding: 5px;
+}
+
+.id-filter {
+    width: 50px;
+    padding: 5px;
+}
+
+.desc-filter {
+    width: 150px;
+    padding: 5px;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 7px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-button i {
+    margin: 0;
+}
+
+/* Estilos para o botão de logout */
+.logout-container {
+    position: fixed; /* Fixo no canto da tela */
+    top: 10px;
+    right: 10px; /* Garantir que fique sempre no canto direito */
+    z-index: 1100; /* Garantir que esteja acima de outros elementos */
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens no início do contêiner */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.logout-button {
+    background-color: #e74c3c; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 15px; /* Padding */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.logout-button:hover {
+    background-color: #c0392b; /* Cor ao passar o mouse */
+}
+
+
+/* Contador de resultados */
+#counter-container {
+    position: fixed;
+    top: 8px; /* Ajuste conforme necessário */
+    left: 310px;
+    z-index: 1100; /* Garantir que esteja acima de outros elementos */
+    font-size: 14px;
+    /*background-color: #1f1f1f;*/
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Estilo padrão da tabela */
+table tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Quando uma linha for selecionada */
+.selected {
+    /*background-color: #0a0a0a;  Cor de ênfase */
+    font-weight: bold;
+}
+
+/* Estilo das linhas não selecionadas */
+.deselected {
+    opacity: 0.2; /* Suaviza as outras linhas */
+}
+
+/* Estilo para linhas pares */
+.even-row {
+    background-color: #2c2c2c; /* Cor de fundo para linhas pares */
+}
+
+/* Estilo para linhas ímpares */
+.odd-row {
+    background-color: #1e1e1e; /* Cor de fundo para linhas ímpares */
+}
+
+tr:hover {
+    background-color: #333; /* Cor de fundo ao passar o mouse */
+}
+
+.export-button {
+    background-color: #217346; /* Cor verde do Excel */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.export-button i {
+    margin-right: 8px;
+}
+
+.export-button:hover {
+    background-color: #1e5e3e;
+}
