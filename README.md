@@ -41,6 +41,8 @@ MYSQL_DB=
 3. Instale as dependências:
 
 ```
+python -m venv venv
+source venv/bin/activate  # No Windows use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -62,6 +64,14 @@ Flask4/
 ├── app.py             # Arquivo principal
 ├── requirements.txt   # Dependências
 ```
+
+## 🤝 Contribuindo
+
+Sinta-se à vontade para abrir issues ou enviar pull requests. Toda ajuda é bem-vinda!
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👨‍💻 Autor
 Luis Vieira  
