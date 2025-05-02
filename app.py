@@ -33,12 +33,18 @@ redis = Redis(host='localhost', port=6379, db=0)
 class DummyForm(FlaskForm):
     submit = SubmitField('Enviar')
 
-# Configurar Limiter com Redis
+# Função para definir limites com base no tipo de usuário
+def dynamic_limits():
+    if current_user.is_authenticated and current_user.tipo_user in [2, 3]:
+        return []  # Sem limites para usuários tipo 2 e 3
+    return "30 per hour"  # Limite padrão para outros usuários
+
+# Configurar Limiter com limites dinâmicos
 limiter = Limiter(
-    get_remote_address,
     app=app,
-    storage_uri='redis://localhost:6379/0',  # Usa Redis para tracking de limites
-    default_limits=["10 per minute", "30 per hour"]
+    storage_uri='redis://localhost:6379/0',
+    default_limits=["10 per minute"],  # Limite padrão
+    key_func=lambda: current_user.id if current_user.is_authenticated else get_remote_address()
 )
 
 # Configuração de conexão com MySQL usando variáveis de ambiente
@@ -121,6 +127,17 @@ def hash_password(password):
 # Classe de formulário de exemplo
 class DummyForm(FlaskForm):
     submit = SubmitField('Submit')
+
+# Configurar o tempo de vida da sessão com base no tipo de usuário
+@app.before_request
+def adjust_session_timeout():
+    if current_user.is_authenticated:
+        if current_user.tipo_user in [2, 3]:
+            session.permanent = True  # Sessão permanente para usuários tipo 2 e 3
+            app.permanent_session_lifetime = timedelta(hours=8)  # 8 horas de sessão
+        else:
+            session.permanent = True
+            app.permanent_session_lifetime = timedelta(minutes=10)  # 10 minutos para outros usuários
 
 # Página de login com limite de tentativas
 @app.route('/login', methods=['GET', 'POST'])
@@ -206,6 +223,7 @@ def logout():
 # Página inicial redirecionando conforme o tipo de usuario e filial
 @app.route('/')
 @login_required
+@limiter.limit(dynamic_limits)
 def home():
     form = DummyForm()
     if current_user.tipo_user in [2, 3, 5]:
@@ -218,13 +236,13 @@ def home():
         form = DummyForm()
         return render_template('index.html', user_type=current_user.tipo_user, form=form)
 
-@app.route('/chamados')
+@app.route('/desenvolvimento')
 @login_required
-def chamados():
+def desenvolvimento():
     cur = mysql.connection.cursor()
 
     if current_user.tipo_user in [2, 3, 5]:
-        cur.execute("SELECT * FROM suporte_chamados")
+        cur.execute("SELECT * FROM suporte_chamados where status = 'desenvolvimento'")
 
     elif current_user.codigo_filial == '99':
         # Usar cod_setor diretamente da tabela usuarios
@@ -232,12 +250,44 @@ def chamados():
         #print(f"Tipo de usuário: {current_user.cod_setor}")
         cur.execute("""
             SELECT * FROM suporte_chamados 
-            WHERE FIND_IN_SET(cod_setor, %s)
+            WHERE FIND_IN_SET(cod_setor, %s) and status = 'desenvolvimento'
         """, [setores])
 
     else:
         filiais = current_user.codigo_filial
-        cur.execute("SELECT * FROM suporte_chamados WHERE FIND_IN_SET(codigo_filial, %s)", [filiais])
+        cur.execute("SELECT * FROM suporte_chamados WHERE FIND_IN_SET(codigo_filial, %s) and status = 'desenvolvimento'", [filiais])
+
+    dados = cur.fetchall()
+    cur.close()
+    
+    # Formatando a data de abertura para dd/mm/aaaa
+    for chamado in dados:
+        if 'data_abertura' in chamado and chamado['data_abertura']:
+            chamado['data_abertura'] = chamado['data_abertura'].strftime('%d/%m/%Y')
+
+    form = DummyForm()
+    return render_template('desenvolvimento.html', dados=dados, user_type=current_user.tipo_user, form=form, is_desenvolvimento=True)
+
+@app.route('/chamados')
+@login_required
+def chamados():
+    cur = mysql.connection.cursor()
+
+    if current_user.tipo_user in [2, 3, 5]:
+        cur.execute("SELECT * FROM suporte_chamados where status != 'desenvolvimento'")
+
+    elif current_user.codigo_filial == '99':
+        # Usar cod_setor diretamente da tabela usuarios
+        setores = current_user.cod_setor  # Assumindo que cod_setor pode ser uma lista ou string separada por vírgulas
+        #print(f"Tipo de usuário: {current_user.cod_setor}")
+        cur.execute("""
+            SELECT * FROM suporte_chamados 
+            WHERE FIND_IN_SET(cod_setor, %s) and status != 'desenvolvimento'
+        """, [setores])
+
+    else:
+        filiais = current_user.codigo_filial
+        cur.execute("SELECT * FROM suporte_chamados WHERE FIND_IN_SET(codigo_filial, %s) and status != 'desenvolvimento'", [filiais])
 
     dados = cur.fetchall()
     cur.close()
@@ -250,6 +300,7 @@ def chamados():
     form = DummyForm()
     return render_template('chamados.html', dados=dados, user_type=current_user.tipo_user, form=form)
 
+
 # Página de consulta para infra_chamados
 @app.route('/infra_chamados')
 @login_required
@@ -257,7 +308,7 @@ def infra_chamados():
     cur = mysql.connection.cursor()
 
     if current_user.tipo_user in [2, 3, 5]:
-        cur.execute("SELECT * FROM infra_chamados")
+        cur.execute("SELECT * FROM infra_chamados where status != 'desenvolvimento'")
 
     elif current_user.codigo_filial == '99':
         # Usar cod_setor diretamente da tabela usuarios
@@ -265,12 +316,12 @@ def infra_chamados():
         #print(f"Tipo de usuário: {current_user.cod_setor}")
         cur.execute("""
             SELECT * FROM infra_chamados 
-            WHERE FIND_IN_SET(cod_setor, %s)
+            WHERE FIND_IN_SET(cod_setor, %s) and status != 'desenvolvimento'
         """, [setores])
 
     else:
         filiais = current_user.codigo_filial
-        cur.execute("SELECT * FROM infra_chamados WHERE FIND_IN_SET(codigo_filial, %s)", [filiais])
+        cur.execute("SELECT * FROM infra_chamados WHERE FIND_IN_SET(codigo_filial, %s) and status != 'desenvolvimento'", [filiais])
 
     dados = cur.fetchall()
     cur.close()
@@ -289,7 +340,7 @@ def infra_chamados():
 def transporte_chamados():
     cur = mysql.connection.cursor()
     if current_user.tipo_user in [2, 3, 5]:
-        cur.execute("SELECT * FROM solicitacoes_transporte")
+        cur.execute("SELECT * FROM solicitacoes_transporte where status != 'desenvolvimento'")
 
     elif current_user.codigo_filial == '99':
         # Usar cod_setor diretamente da tabela usuarios
@@ -297,7 +348,7 @@ def transporte_chamados():
         #print(f"Tipo de usuário: {current_user.cod_setor}")
         cur.execute("""
             SELECT * FROM solicitacoes_transporte 
-            WHERE FIND_IN_SET(cod_setor, %s)
+            WHERE FIND_IN_SET(cod_setor, %s) and status != 'desenvolvimento'
         """, [setores])
        
     dados = cur.fetchall()

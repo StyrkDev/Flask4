@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="/static/fontawesome-free-6.6.0-web/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <!-- Botão de logout no canto superior direito -->
+    <div class="logout-container">
+        <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
+            {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+            <button type="submit" class="logout-button">Sair</button>
+        </form>
+    </div>
+</head>
+
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
+        <h1>Consulta de Chamados</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <!--<h2>Escolha uma Consulta</h2>-->
+            <div class="button-container">
+                <button class="styled-button" onclick="window.location.href='/chamados'">Suporte</button>
+                <button class="styled-button" onclick="window.location.href='/desenvolvimento'">Desenvolvimento</button>
+                <button class="styled-button" onclick="window.location.href='/infra_chamados'">Infraestrutura</button>
+                <button class="styled-button" onclick="window.location.href='/transporte_chamados'">Transporte</button>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/+554197070185" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+
+</html>

@@ -2830,3 +2830,672 @@ RuntimeError: The session is unavailable because no secret key was set.  Set the
 2024-12-11 14:17:22,111 INFO [app:182] usuario Dyhonatan logado com sucesso.
 2024-12-11 14:17:22,136 INFO [app:95] usuario 183 carregado com sucesso.
 2024-12-11 14:17:23,381 INFO [app:95] usuario 183 carregado com sucesso.
+2025-05-01 19:35:51,770 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:35:58,843 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2025-05-01 19:36:02,413 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2025-05-01 19:36:26,822 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2025-05-01 19:36:28,951 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2025-05-01 19:37:40,693 ERROR [app:392] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 285, in decorated_view
+    return current_app.login_manager.unauthorized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\login_manager.py", line 187, in unauthorized
+    flash(self.login_message, category=self.login_message_category)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\helpers.py", line 323, in flash
+    session["_flashes"] = flashes
+    ~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\sessions.py", line 102, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+2025-05-01 19:37:47,772 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:37:56,967 WARNING [app:397] Página não encontrada: http://localhost:8279/android-chrome-192x192.png
+2025-05-01 19:37:56,973 WARNING [app:397] Página não encontrada: http://localhost:8279/android-chrome-512x512.png
+2025-05-01 19:38:02,402 INFO [app:135] Tentativa de login do usuario: luis
+2025-05-01 19:38:03,294 INFO [app:182] usuario luis logado com sucesso.
+2025-05-01 19:38:03,394 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:39:59,691 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:40:04,053 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:40:05,659 WARNING [app:430] Página não encontrada: http://localhost:8279/Desenvolvimento
+2025-05-01 19:40:05,695 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:41:13,273 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:41:16,516 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:41:20,818 WARNING [app:430] Página não encontrada: http://localhost:8279/Desenvolvimento
+2025-05-01 19:41:20,851 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:04,005 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:14,102 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:15,534 WARNING [app:430] Página não encontrada: http://localhost:8279/Desenvolvimento
+2025-05-01 19:42:15,564 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:29,184 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:42:31,590 WARNING [app:430] Página não encontrada: http://localhost:8279/Desenvolvimento
+2025-05-01 19:42:31,632 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:34,448 WARNING [app:430] Página não encontrada: http://localhost:8279/Desenvolvimento
+2025-05-01 19:42:34,503 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:45,130 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:42:48,108 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:42:49,329 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:44:03,269 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:44:09,806 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:56:40,490 INFO [csrf:263] The CSRF session token is missing.
+2025-05-01 19:56:40,490 INFO [app:417] Um usuário não autenticado foi deslogado por inatividade
+2025-05-01 19:58:08,266 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 19:59:08,928 INFO [app:135] Tentativa de login do usuario: luis
+2025-05-01 19:59:09,151 INFO [app:182] usuario luis logado com sucesso.
+2025-05-01 19:59:09,179 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:59:16,218 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:59:38,672 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:59:51,388 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 19:59:52,849 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:02:53,702 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:03:03,014 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:03:05,191 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:03:07,156 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:05:12,578 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:05:14,982 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:08:50,765 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:08:54,847 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:08:58,702 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:09:02,166 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:09:07,541 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:09:10,215 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:15:20,049 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:15:24,778 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:15:26,284 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:15:27,643 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:15:32,025 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:15:33,071 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:16:46,112 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:16:50,537 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:16:55,285 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:16:58,276 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:03,074 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:03,991 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:07,829 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:08,680 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:14,088 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:17:16,114 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:19:30,440 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:19:35,430 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:19:35,446 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 259, in chamados
+    cur.execute("SELECT * FROM suporte_chamados and status != 'desenvolvimento'")
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status != 'desenvolvimento'' at line 1")
+
+2025-05-01 20:19:51,344 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:19:51,347 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 259, in chamados
+    cur.execute("SELECT * FROM suporte_chamados and status != 'desenvolvimento'")
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status != 'desenvolvimento'' at line 1")
+
+2025-05-01 20:19:52,674 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:19:54,021 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:19:54,026 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 259, in chamados
+    cur.execute("SELECT * FROM suporte_chamados and status != 'desenvolvimento'")
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status != 'desenvolvimento'' at line 1")
+
+2025-05-01 20:21:31,602 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:21:34,955 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:21:34,960 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 259, in chamados
+    cur.execute("SELECT * FROM suporte_chamados and status <> 'desenvolvimento'")
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status <> 'desenvolvimento'' at line 1")
+
+2025-05-01 20:21:36,634 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:21:46,918 WARNING [app:430] Página não encontrada: http://localhost:8279/adminlogs
+2025-05-01 20:21:46,949 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:21:52,196 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:23:08,889 WARNING [app:430] Página não encontrada: http://localhost:8279/adminlogs
+2025-05-01 20:23:08,916 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:23:09,855 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:23:11,733 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:23:11,737 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 259, in chamados
+    cur.execute("SELECT * FROM suporte_chamados")
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\MySQLdb\connections.py", line 261, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status <> 'desenvolvimento'' at line 1")
+
+2025-05-01 20:23:20,271 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:23:24,514 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:24:53,817 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:24:57,350 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:25:25,039 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:25:26,560 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:26:56,629 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:27:04,829 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:27:21,616 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:27:23,331 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:27:25,080 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:33:50,673 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:36:13,413 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:38:16,496 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:38:19,803 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:40:06,076 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:40:14,154 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:40:16,255 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:41:21,660 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:42:18,643 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:43:20,418 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:44:18,394 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:46:11,427 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:47:50,823 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:50:59,552 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:51:03,123 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:53:12,567 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:53:14,619 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:53:21,473 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:55:22,666 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:55:26,165 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:57:55,296 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:57:57,682 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:58:08,212 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:58:47,384 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:58:52,122 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:59:11,414 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:59:13,903 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:59:30,680 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:59:54,158 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 20:59:56,501 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 20:59:58,169 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:01:54,372 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:02:49,981 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:02:53,035 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:04:02,302 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:04:04,580 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:04:18,963 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:06:09,664 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:06:13,039 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:06:25,335 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:06:29,504 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:06:33,056 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: home
+2025-05-01 21:06:33,063 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2025-05-01 21:06:33,095 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:06:37,740 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: home
+2025-05-01 21:06:37,741 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2025-05-01 21:06:38,083 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:08:14,531 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: home
+2025-05-01 21:08:14,532 ERROR [app:425] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2025-05-01 21:08:14,631 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:15:43,407 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:15:46,478 INFO [extension:1095] ratelimit 30 per 1 hour (127.0.0.1) exceeded at endpoint: home
+2025-05-01 21:15:46,479 ERROR [app:441] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1160, in _check_request_limit
+    raise e
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1157, in _check_request_limit
+    self.__evaluate_limits(endpoint, all_limits)
+  File "C:\Users\luism\Documents\GitHub\Flask4\venv\Lib\site-packages\flask_limiter\extension.py", line 1141, in __evaluate_limits
+    raise RateLimitExceeded(
+flask_limiter.errors.RateLimitExceeded: 429 Too Many Requests: 30 per 1 hour
+
+2025-05-01 21:15:46,512 INFO [app:95] usuario 231 carregado com sucesso.
+2025-05-01 21:22:38,766 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:22:42,862 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:22:42,865 ERROR [app:448] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 145, in clear_limits_for_admins
+    limiter.clear_limits(current_user.id)  # Remove limites para o usuário atual
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Limiter' object has no attribute 'clear_limits'. Did you mean: '_meta_limits'?
+
+2025-05-01 21:22:52,982 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:22:52,986 ERROR [app:448] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 145, in clear_limits_for_admins
+    limiter.clear_limits(current_user.id)  # Remove limites para o usuário atual
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Limiter' object has no attribute 'clear_limits'. Did you mean: '_meta_limits'?
+
+2025-05-01 21:26:21,549 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:21,555 ERROR [app:448] Server Error: Traceback (most recent call last):
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\AppData\Roaming\Python\Python312\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\luism\Documents\GitHub\Flask4\app.py", line 145, in clear_limits_for_admins
+    def login():
+            ^^^^^
+AttributeError: 'Limiter' object has no attribute 'clear_limits'. Did you mean: '_meta_limits'?
+
+2025-05-01 21:26:26,105 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:26:28,511 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:28,563 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:28,563 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:36,362 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:36,425 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:36,666 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:36,740 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:36,740 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:37,015 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:38,030 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:38,399 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:26:38,400 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:23,714 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:23,881 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:24,011 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:24,303 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:24,602 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:27:24,603 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,146 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,221 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,221 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,406 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,528 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,580 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:29:52,581 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:30,270 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:31:33,166 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:33,236 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:33,236 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:33,418 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:33,541 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:33,668 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:34,671 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:35,018 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:31:35,018 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:05,509 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:32:08,445 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:08,517 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:08,521 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:08,686 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:08,820 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:08,943 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:09,945 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:10,370 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:11,377 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:33,177 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:33,274 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:33,473 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:33,836 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:33,913 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:34,103 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,291 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,360 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,604 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,672 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,672 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:45,953 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:46,959 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:47,245 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:47,398 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:47,504 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:48,434 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:54,271 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:54,341 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:54,576 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:54,651 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:32:55,655 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:27,113 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:34:29,467 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:29,533 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:29,724 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:29,753 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:30,539 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:30,671 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:30,671 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:37,129 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:37,276 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:37,276 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:37,383 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:37,862 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:38,874 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:41,167 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:41,239 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:41,480 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:41,544 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:41,831 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:42,557 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:42,839 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:50,849 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:34:51,854 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:32,911 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:32,912 INFO [app:218] usuario 231 fez logout.
+2025-05-01 21:35:41,571 INFO [app:152] Tentativa de login do usuario: luis
+2025-05-01 21:35:41,823 INFO [app:199] usuario luis logado com sucesso.
+2025-05-01 21:35:41,920 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:42,036 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:42,036 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:42,359 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:43,127 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:43,551 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:44,611 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:54,357 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:35:54,659 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:42,354 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:37:47,013 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:47,145 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:47,268 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:47,357 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:47,457 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:47,633 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:48,235 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:48,569 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:37:48,850 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:46,245 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:38:49,340 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,414 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,414 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,593 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,723 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,855 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:49,855 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:50,118 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:38:50,423 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:42:55,476 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:43:00,667 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:00,752 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:00,921 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:01,054 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:01,150 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:01,753 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:02,158 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:02,402 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:02,729 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:06,474 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:06,547 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:06,547 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:06,742 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:06,906 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:07,908 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:16,347 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:16,422 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:16,441 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:16,605 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:16,739 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:18,770 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:18,933 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:19,050 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:19,277 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:24,068 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:24,141 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:24,163 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:24,326 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:24,446 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:25,083 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:25,162 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:25,386 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:43:25,457 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:21,385 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:21,460 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:21,472 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:21,490 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:21,650 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:44,577 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:45:44,578 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:42,288 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:42,361 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:42,554 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:42,671 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:43,365 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:43,718 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:44,728 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:44,770 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:45,075 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:53,945 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:54,022 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:54,200 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:55,029 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:55,386 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:47:56,387 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,016 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,085 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,323 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,394 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,394 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:01,671 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:48:02,674 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,471 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,533 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,538 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,567 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,725 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,839 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,881 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:52,922 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:49:53,232 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:01,424 INFO [wasyncore:485] Serving on http://0.0.0.0:8279
+2025-05-01 21:50:03,773 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:03,835 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:03,835 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:04,020 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:04,151 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:04,261 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:05,272 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:05,616 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:06,625 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:52,834 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:52,893 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:52,931 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,139 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,204 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,204 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,281 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,403 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:50:53,713 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:05,251 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:05,307 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:05,340 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:05,496 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:06,306 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:06,357 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:06,668 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:07,019 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:07,019 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:33,627 INFO [app:101] usuario 231 carregado com sucesso.
+2025-05-01 21:51:33,937 INFO [app:101] usuario 231 carregado com sucesso.

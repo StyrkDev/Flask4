@@ -8,7 +8,8 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; object-src 'none';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Chamados Suporte</title>
+    <title>Suporte</title>
+    
      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>;-->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
@@ -25,6 +26,7 @@
                 {{ form.hidden_tag() }} <!-- Proteção CSRF -->
                 <button type="submit" class="logout-button">Sair</button>
             </form>
+                <!--    <button id="theme-toggle" class="theme-toggle">🌙</button>-->
             <button id="resumo-button">Resumo</button>
         </div>
         

@@ -25,17 +25,30 @@
 
 <body>
     <header>
-        <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
-        <h1>Consulta de Chamados</h1>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
+            <h1>Consulta de Chamados</h1>
+        </div>
+    <!--    <button id="theme-toggle" class="theme-toggle">🌙</button>-->
     </header>
 
     <main>
         <section class="container">
-            <!--<h2>Escolha uma Consulta</h2>-->
+            <h2>Bem-vindo ao Sistema de Chamados</h2>
+            <p>Escolha uma das opções abaixo:</p>
             <div class="button-container">
-                <button class="styled-button" onclick="window.location.href='/chamados'">Chamados Suporte</button>
-                <button class="styled-button" onclick="window.location.href='/infra_chamados'">Chamados Infra</button>
-                <button class="styled-button" onclick="window.location.href='/transporte_chamados'">Chamados Transporte</button>
+                <button class="styled-button" onclick="window.location.href='/chamados'">
+                    <i class="fas fa-headset"></i> Suporte
+                </button>
+                <button class="styled-button" onclick="window.location.href='/desenvolvimento'">
+                    <i class="fas fa-code"></i> Desenvolvimento
+                </button>
+                <button class="styled-button" onclick="window.location.href='/infra_chamados'">
+                    <i class="fas fa-network-wired"></i> Infraestrutura
+                </button>
+                <button class="styled-button" onclick="window.location.href='/transporte_chamados'">
+                    <i class="fas fa-truck"></i> Transporte
+                </button>
             </div>
         </section>
     </main>
