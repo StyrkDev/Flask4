@@ -37,6 +37,7 @@ MYSQL_PORT=
 MYSQL_USER=
 MYSQL_PASSWORD=
 MYSQL_DB=
+SECRET_KEY=
 ```
 3. Instale as dependências:
 
