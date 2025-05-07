@@ -14,28 +14,36 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
     <link rel="manifest" href="/static/site.webmanifest">
+    <!-- Botão de logout no canto superior direito -->
+    <div class="logout-container">
+        <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
+            {{ form.hidden_tag() }} <!-- Proteção CSRF -->
+            <button type="submit" class="logout-button">Sair</button>
+        </form>
+    </div>
 </head>
 
 <body>
     <header>
-        <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
-        <h1>Consulta de Chamados</h1>
-
-        <!-- Botão de logout no canto superior direito -->
-        <div class="logout-container">
-            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
-                {{ form.hidden_tag() }} <!-- Proteção CSRF -->
-                <button type="submit" class="logout-button">Sair</button>
-            </form>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='anjuss.png') }}" alt="Logo Anjuss" class="logo">
+            <h1>Consulta de Chamados</h1>
         </div>
+    <!--    <button id="theme-toggle" class="theme-toggle">🌙</button>-->
     </header>
 
     <main>
         <section class="container">
-            <!--<h2>Escolha uma Consulta</h2>-->
+            <h2>Bem-vindo ao Sistema de Chamados</h2>
+            <p>Escolha uma das opções abaixo:</p>
             <div class="button-container">
-                <button class="styled-button" onclick="window.location.href='/chamados'">Suporte</button>
-                <button class="styled-button" onclick="window.location.href='/infra_chamados'">Infraestrutura</button>
+                <button class="styled-button" onclick="window.location.href='/chamados'">
+                    <i class="fas fa-headset"></i> Suporte
+                </button>
+                <button class="styled-button" onclick="window.location.href='/infra_chamados'">
+                    <i class="fas fa-desktop"></i> Infraestrutura
+                </button>
+
             </div>
         </section>
     </main>
