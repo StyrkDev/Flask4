@@ -31,8 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para atualizar o contador de resultados
     const updateCounter = () => {
+        const table = document.getElementById('chamados-table');
         const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
-        resultCounter.textContent = visibleRows.length;
+        const resultCounter = document.getElementById('result-counter');
+        if (resultCounter) {
+            resultCounter.textContent = visibleRows.length;
+        }
     };
    
     const applyFilters = () => {
@@ -374,8 +378,11 @@ function calcularResumos(filtrarPorData = false) {
     const rows = table.querySelectorAll('tbody tr');
     rows.forEach(row => {
         const dateText = row.cells[2].textContent.trim(); // Assuming column 3 is the opening date
-        const date = new Date(dateText);
+        const [day, month, year] = dateText.split('/');
+        const date = new Date(`${year}-${month}-${day}`);
         const status = row.cells[1].textContent.trim().toLowerCase();
+
+        console.log({ dateText, rowDate: date, startDate, endDate });
 
         // Filter by date and status for the summary
         const matchesDate = !filtrarPorData || 
@@ -456,4 +463,73 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('light-mode');
         themeToggle.textContent = '☀️'; // Ícone para desativar o modo claro
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const startDateInput = document.getElementById('start-date');
+    const endDateInput = document.getElementById('end-date');
+    const applyDateFilterButton = document.getElementById('apply-date-filter');
+
+    applyDateFilterButton.addEventListener('click', () => {
+        const startDate = startDateInput.value ? new Date(startDateInput.value) : null;
+        const endDate = endDateInput.value ? new Date(endDateInput.value) : null;
+
+        const rows = document.querySelectorAll('#chamados-table tbody tr');
+        rows.forEach(row => {
+            const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
+            const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
+            const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
+
+            const matchesDate = (!startDate || rowDate >= startDate) &&
+                                (!endDate || rowDate <= endDate);
+
+            row.style.display = matchesDate ? '' : 'none';
+        });
+
+        updateCounter(); // Atualiza o contador de resultados
+    });
+});
+
+document.getElementById('export-excel').addEventListener('click', () => {
+    const table = document.getElementById('chamados-table');
+    const rows = Array.from(table.querySelectorAll('tr')).filter(row => row.style.display !== 'none')
+        .map(row => Array.from(row.cells).map(cell => cell.textContent.trim()));
+
+    const worksheet = XLSX.utils.aoa_to_sheet(rows);
+
+    // Adicionar estilo de tabela
+    const range = XLSX.utils.decode_range(worksheet['!ref']);
+    for (let C = range.s.c; C <= range.e.c; ++C) {
+        const cell = worksheet[XLSX.utils.encode_cell({ r: 0, c: C })];
+        if (cell) cell.s = { font: { bold: true }, fill: { fgColor: { rgb: "D9E1F2" } } }; // Cabeçalhos
+    }
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Chamados');
+
+    // Aplicar estilo de tabela
+    worksheet['!cols'] = rows[0].map(() => ({ wpx: 120 })); // Largura das colunas
+    worksheet['!rows'] = rows.map(() => ({ hpx: 20 })); // Altura das linhas
+
+    // Obter a data atual no formato YYYY-MM-DD
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // Exportar o arquivo com a data no nome
+    XLSX.writeFile(workbook, `chamados_${currentDate}.xlsx`);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    // Esconde o botão inicialmente
+    backToTopButton.style.display = 'none';
+
+    // Mostra ou esconde o botão ao rolar a página
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Exibe o botão ao rolar mais de 200px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
 });
