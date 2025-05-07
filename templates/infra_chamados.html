@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Infraestrutura</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
@@ -20,11 +20,20 @@
     <header>
         <!-- Botão de logout no canto superior direito -->
         <div class="logout-container">
-            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST" style="display: flex; align-items: center;">
+                <!--    <button id="theme-toggle" class="theme-toggle">🌙</button>-->
+            <div class="button-container">
+                <!-- Botão de Exportar -->
+                <button id="export-excel" class="icon-button" title="Exportar para Excel">
+                    <i class="fas fa-file-excel"></i> Exportar
+                </button>
+            </div>
+
+            <button id="resumo-button" class="resumo-button">Resumo</button>
+
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="POST">
                 {{ form.hidden_tag() }} <!-- Proteção CSRF -->
                 <button type="submit" class="logout-button">Sair</button>
-            </form>
-            <button id="resumo-button">Resumo</button>
+            </form>  
         </div>
         
         <div id="resumo-modal">
@@ -39,34 +48,46 @@
                 <label><input type="checkbox" value="Finalizada" class="summary-status-checkbox"> Finalizada</label>
             </div>
             <div class="filter-container">
-                <label for="start-date">Data de Início:</label>
-                <input type="date" id="start-date" name="start-date">
-                <label for="end-date">Data de Fim:</label>
-                <input type="date" id="end-date" name="end-date">
-                <button id="filter-button">FILTRAR</button>
+                <label for="resumo-start-date">Data de Início:</label>
+                <input type="date" id="resumo-start-date" name="resumo-start-date">
+                <label for="resumo-end-date">Data de Fim:</label>
+                <input type="date" id="resumo-end-date" name="resumo-end-date">
+                <button id="resumo-filter-button">FILTRAR</button>
             </div>
             <div id="resumo-content"></div>
         </div>
 
-        <!-- Filtro e contagem de resultados -->       
+        <!-- Filtro e contagem de resultados -->
         <div id="filter-container">
-            <label for="id-filter">Filtrar por ID:</label>
-            <input type="text" id="id-filter" placeholder="Digite o ID">
-            
-        <div id="status-filter">
-            <span>Filtrar por Status:</span>
-            <label><input type="checkbox" value="Aberta" class="status-checkbox"> Aberta</label>
-            <label><input type="checkbox" value="Em Atendimento" class="status-checkbox"> Em Atendimento</label>
-            <label><input type="checkbox" value="Em Pausa" class="status-checkbox"> Em Pausa</label>
-            <label><input type="checkbox" value="Cancelado" class="status-checkbox"> Cancelado</label>
-            <label><input type="checkbox" value="Finalizada" class="status-checkbox"> Finalizada</label>       
-        </div>  
+            <div id="id-status-filter">
+                <label for="id-filter">Filtrar por ID:</label>
+                <input type="text" id="id-filter" placeholder="Digite o ID">
 
-        <!-- Botão de logout no canto superior direito -->
-        <div id="counter-container">
-            <span id="result-counter">0</span> resultados encontrados
+                <div id="status-filter">
+                    <span>Filtrar por Status:</span>
+                    <label><input type="checkbox" value="Aberta" class="status-checkbox"> Aberta</label>
+                    <label><input type="checkbox" value="Em Atendimento" class="status-checkbox"> Em Atendimento</label>
+                    <label><input type="checkbox" value="Em Pausa" class="status-checkbox"> Em Pausa</label>
+                    <label><input type="checkbox" value="Cancelado" class="status-checkbox"> Cancelado</label>
+                    <label><input type="checkbox" value="Finalizada" class="status-checkbox"> Finalizada</label>
+                </div>
+            </div>
+
+            <!-- Filtro de data principal -->
+            <div class="date-filter-container">
+                <label for="start-date">Data de Início:</label>
+                <input type="date" id="start-date" name="start-date">
+                <label for="end-date">Data de Fim:</label>
+                <input type="date" id="end-date" name="end-date">
+                <button id="apply-date-filter">Aplicar</button>
+            </div>
         </div>
-    
+
+        <!-- Contador de resultados -->
+        <div id="counter-container">
+            <span id="result-counter">{{ dados|length }}</span> resultados encontrados
+        </div>
+
     </header>
     
     <main>
@@ -80,12 +101,12 @@
                     <tr>
                         <th>ID</th>
                         <th>Status</th>
-                        <th>Data Abertura</th>
-                        <th>Horario Abertura</th>
+                        <th>Data</th>
+                        <th>Horario</th>
                         <p> </p>
 
                         {% if user_type in [2, 3] %}
-                        <th>Código Filial</th>
+                        <th>Filial</th>
                         <th>Setor</th>
                         <th>Solicitante</th>
                         <th>Nome</th>
@@ -93,7 +114,6 @@
                         <th>Descrição</th>
                         <th>Anexo</th>
                         <th>Anydesk</th>
-                        <th>Chamado</th>
         
                         {% elif user_type in [4, 5] %}
                         <th>Solicitante</th>
@@ -124,7 +144,6 @@
                         <td>{{ chamado.desc_problema }}</td>
                         <td>{{ chamado.anexo }}</td>
                         <td>{{ chamado.anydesk }}</td>
-                        <td>{{ chamado.chamado_ocomon }}</td>
         
                         {% elif user_type in [4, 5] %}
                         <td>{{ chamado.solicitante }}</td>

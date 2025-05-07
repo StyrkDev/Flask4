@@ -81,7 +81,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 1.75rem;
+    padding: 1.5rem;
     text-align: left;
 }
 
@@ -89,7 +89,7 @@ th {
     background-color: #121212;
     color: #ffffff;
     position: sticky;
-    top: 33px;
+    top: 70px;
     z-index: 100;
     flex-direction: column; /* Garante que o texto e o filtro fiquem em colunas (um embaixo do outro) */
     align-items: center; /* Centraliza o texto e o filtro horizontalmente */
@@ -119,11 +119,11 @@ table th {
     cursor: pointer;
 }
 
-table th.sort-asc::after {
+table th.sort-asc::before {
     content: " ↑";
 }
 
-table th.sort-desc::after {
+table th.sort-desc::before {
     content: " ↓";
 }
 
@@ -181,7 +181,7 @@ table td.id-column {
 }
 
 .header-filter {
-    width: 150px;
+  /*  width: 150px;*/
     padding: 5px;
 }
 
@@ -302,21 +302,21 @@ tr:hover {
 }
 
 #resumo-modal {
-    display: none;
+    display: none; /* Oculta o modal por padrão */
     position: fixed;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #333;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 80%; /* Ajuste conforme necessário */
-    max-width: 800px;
-    max-height: 80vh; /* Altura máxima de 80% da altura da viewport */
-    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    transform: translate(-50%, -10%);
+    width: 90%; /* Ajuste para telas pequenas */
+    max-width: 600px; /* Limite para telas maiores */
+    max-height: 80%; /* Permite rolagem em telas pequenas */
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: 1500;
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo for maior que o modal */
 }
 
 #resumo-content {
@@ -342,19 +342,23 @@ tr:hover {
 
 #close-resumo {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f44336; /* Vermelho */
-    color: white;
-    padding: 5px 10px;
+    top: 10px; /* Ajuste para garantir visibilidade */
+    right: 10px; /* Ajuste para garantir visibilidade */
+    background: none;
     border: none;
-    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-size: 14px;
+    z-index: 1600; /* Garante que o botão fique acima de outros elementos */
 }
 
 #close-resumo:hover {
     background-color: #d32f2f; /* Vermelho escuro */
+}
+
+#resumo-modal h2 {
+    margin-top: 2rem; /* Garante que o título não fique sobreposto ao botão de fechar */
+    text-align: center;
 }
 
 #filter-button {
@@ -408,7 +412,7 @@ tr:hover {
 }
 
 .date-filter-container input {
-    padding: 5px;
+    padding: 1px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -417,7 +421,7 @@ tr:hover {
     background-color: transparent;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 1px 1px;
     border-radius: 5px;
     cursor: pointer;
     height: 36px;

@@ -1,12 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('chamados-table');
+    if (!table) {
+        console.warn("Elemento 'chamados-table' não encontrado.");
+        return; // Sai da função se o elemento não existir
+    }
+
     const headers = table.querySelectorAll('th');
     const idFilter = document.getElementById('id-filter');
     const resultCounter = document.getElementById('result-counter');
     const statusCheckboxes = document.querySelectorAll('.status-checkbox');
     let sortDirection = 'desc'; // Direção de ordenação decrescente
     let sortedIndex = 0; // Índice da coluna ID
-
+    
     // Função para ordenar a tabela
     const sortTable = (index, direction) => {
         const rows = Array.from(table.querySelectorAll('tbody tr'));
@@ -26,8 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para atualizar o contador de resultados
     const updateCounter = () => {
+        const table = document.getElementById('chamados-table');
         const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
-        resultCounter.textContent = visibleRows.length;
+        const resultCounter = document.getElementById('result-counter');
+        if (resultCounter) {
+            resultCounter.textContent = visibleRows.length;
+        }
     };
    
     const applyFilters = () => {
@@ -66,60 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateRowColors = () => {
         const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
         visibleRows.forEach((row, index) => {
-            row.classList.toggle('even-row', index % 2 === 0);
-            row.classList.toggle('odd-row', index % 2 !== 0);
+            row.classList.remove('even-row', 'odd-row'); // Remove classes antigas
+            row.classList.add(index % 2 === 0 ? 'even-row' : 'odd-row'); // Adiciona a classe correta
         });
     };
-/*
-    headers.forEach((header, index) => {
-        const existingInput = header.querySelector('input');
-        if (!existingInput) {
-            const filterInput = document.createElement('input');
-            filterInput.type = 'text';
-            filterInput.placeholder = `Filtrar ${header.textContent}`;
-
-            if (header.textContent === 'ID') {
-                filterInput.classList.add('id-filter');
-            } else if (header.textContent === 'Descrição') {
-                filterInput.classList.add('desc-filter');
-            } else {
-                filterInput.classList.add('header-filter');
-            }
-
-            header.appendChild(filterInput);
-
-            filterInput.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-
-            filterInput.addEventListener('input', (e) => {
-                filterTable(index, e.target.value);
-            });
-        }
-    });*/
 
     idFilter.addEventListener('input', applyFilters);
 
     statusCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', applyFilters);
     }); 
-/*
-    headers.forEach((header, index) => {
-        const existingInput = header.querySelector('input');
-        if (!existingInput) {
-            const filterInput = document.createElement('input');
-            filterInput.type = 'text';
-            filterInput.placeholder = `Filtrar ${header.textContent}`;
-
-            header.appendChild(filterInput);
-
-            filterInput.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
-
-            filterInput.addEventListener('input', applyFilters);
-        }
-    });*/
 
     // Marcar "Aberta", "Em Atendimento" e "Em Pausa" como padrão
     statusCheckboxes.forEach(checkbox => {
@@ -335,7 +300,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
 let idleTime = 0;
 setInterval(() => {
     idleTime++;
@@ -373,64 +337,199 @@ setInterval(() => {
 // Reiniciar o tempo de inatividade ao detectar movimento ou tecla pressionada
 document.onmousemove = document.onkeydown = () => idleTime = 0;
 
-document.getElementById('export-button').addEventListener('click', function() {
-    // Obter a tabela
-    var table = document.getElementById('chamados-table');
-    
-    // Converter a tabela para uma planilha
-    var workbook = XLSX.utils.table_to_book(table, { sheet: "Chamados" });
-    var worksheet = workbook.Sheets["Chamados"];
+// Função para calcular e exibir resumos
+document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener to the "Resumo" button to open the modal
+    document.getElementById('resumo-button').addEventListener('click', () => {
+        calcularResumos();
+    });
 
-    // Aplicar estilos básicos na planilha original
-    for (let cell in worksheet) {
-        if (cell[0] === '!') continue; // Ignorar metadados
+    // Add event listener to the "Close" button to close the modal
+    document.getElementById('close-resumo').addEventListener('click', () => {
+        document.getElementById('resumo-modal').style.display = 'none';
+    });
 
-        // Exemplo de estilo: Negrito e cor de fundo
-        worksheet[cell].s = {
-            font: { bold: true },
-            fill: { fgColor: { rgb: "FFFFAA00" } } // Cor de fundo amarela
-        };
-    }
+    // Add event listener to the "Filter" button to apply filters
+    document.getElementById('filter-button').addEventListener('click', () => {
+        calcularResumos(true);
+    });
+});
 
-    // Inicializar objetos para armazenar os resumos
+function calcularResumos(filtrarPorData = false) {
+    const table = document.getElementById('chamados-table');
     const resumoPorSetor = {};
     const resumoPorFilial = {};
+    const resumoPorStatus = {};
+    const isDesenvolvimento = document.body.getAttribute('data-is-desenvolvimento') === 'true';
 
-    // Percorrer as linhas da tabela para calcular os resumos
+    // Get start and end dates
+    const startDateValue = document.getElementById('start-date').value;
+    const endDateValue = document.getElementById('end-date').value;
+    const startDate = new Date(startDateValue);
+    const endDate = new Date(endDateValue);
+
+    // Get selected statuses only for the summary
+    const resumoStatusCheckboxes = document.querySelectorAll('.summary-status-checkbox');
+    const selectedResumoStatuses = Array.from(resumoStatusCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    // Calculate summaries
     const rows = table.querySelectorAll('tbody tr');
     rows.forEach(row => {
-        const setor = row.cells[2].textContent.trim(); // Supondo que a coluna 3 é o setor
-        const filial = row.cells[3].textContent.trim(); // Supondo que a coluna 4 é o código filial
+        const dateText = row.cells[2].textContent.trim(); // Assuming column 3 is the opening date
+        const [day, month, year] = dateText.split('/');
+        const date = new Date(`${year}-${month}-${day}`);
+        const status = row.cells[1].textContent.trim().toLowerCase();
 
-        // Incrementar contagem por setor
-        if (setor) {
-            resumoPorSetor[setor] = (resumoPorSetor[setor] || 0) + 1;
-        }
+        console.log({ dateText, rowDate: date, startDate, endDate });
 
-        // Incrementar contagem por filial
-        if (filial) {
-            resumoPorFilial[filial] = (resumoPorFilial[filial] || 0) + 1;
+        // Filter by date and status for the summary
+        const matchesDate = !filtrarPorData || 
+            ((isNaN(startDate) || date >= startDate) && (isNaN(endDate) || date <= endDate));
+        const matchesResumoStatus = selectedResumoStatuses.length === 0 || selectedResumoStatuses.includes(status);
+
+        // Ensure filtering by either date or status
+        if (matchesDate && matchesResumoStatus) {
+            const setor = row.cells[5].textContent.trim();
+            const filial = row.cells[4].textContent.trim();
+
+            if (status) {
+                resumoPorStatus[status] = (resumoPorStatus[status] || 0) + 1;
+            }
+            if (setor) {
+                resumoPorSetor[setor] = (resumoPorSetor[setor] || 0) + 1;
+            }
+            if (filial) {
+                resumoPorFilial[filial] = (resumoPorFilial[filial] || 0) + 1;
+            }
         }
     });
 
-    // Criar dados para a tabela dinâmica
-    const dynamicData = [
-        ["Categoria", "Quantidade"],
-        ["Aberta", 10], // Exemplo, substitua por cálculo real
-        ["Em Atendimento", 5], // Exemplo, substitua por cálculo real
-        ["Fechada", 15], // Exemplo, substitua por cálculo real
-        [], // Linha vazia para separar os resumos
-        ["Resumo por Setor"],
-        ...Object.entries(resumoPorSetor),
-        [], // Linha vazia para separar os resumos
-        ["Resumo por Código Filial"],
-        ...Object.entries(resumoPorFilial)
-    ];
+    // Sort and create summary content
+    const sortedStatus = Object.entries(resumoPorStatus).sort((a, b) => b[1] - a[1]);
+    const sortedSetor = Object.entries(resumoPorSetor).sort((a, b) => b[1] - a[1]);
+    const sortedFilial = Object.entries(resumoPorFilial).sort((a, b) => b[1] - a[1]);
 
-    // Criar uma nova planilha para a tabela dinâmica
-    var dynamicSheet = XLSX.utils.aoa_to_sheet(dynamicData);
-    XLSX.utils.book_append_sheet(workbook, dynamicSheet, "Resumo");
+    let resumoContent = "";
 
-    // Exportar o workbook para um arquivo Excel
-    XLSX.writeFile(workbook, 'chamados.xlsx');
+     // Exibir "Resumo por Status" apenas se não for a rota de desenvolvimento
+     if (!isDesenvolvimento) {
+       resumoContent += "<div class='resumo-column'><h3>Resumo por Status</h3><ul>";
+       sortedStatus.forEach(([status, count]) => {
+           resumoContent += `<li>${status}: ${count}</li>`;
+      });
+       resumoContent += "</ul></div>";
+    }
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Setor</h3><ul>";
+    sortedSetor.forEach(([setor, count]) => {
+        resumoContent += `<li>${setor}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Código Filial</h3><ul>";
+    sortedFilial.forEach(([filial, count]) => {
+        resumoContent += `<li>${filial}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div>";
+
+    // Display the summary in the dialog box
+    document.getElementById('resumo-content').innerHTML = resumoContent;
+    document.getElementById('resumo-modal').style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) {
+        console.warn("Elemento 'theme-toggle' não encontrado.");
+        return; // Sai da função se o elemento não existir
+    }
+
+    const body = document.body;
+
+    // Alternar o tema ao clicar no botão
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            localStorage.removeItem('theme'); // Remove a configuração salva
+            themeToggle.textContent = '🌙'; // Ícone para ativar o modo claro
+        } else {
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light-mode'); // Salva a configuração
+            themeToggle.textContent = '☀️'; // Ícone para desativar o modo claro
+        }
+    });
+
+    // Aplicar o tema salvo no localStorage (se existir)
+    if (localStorage.getItem('theme') === 'light-mode') {
+        body.classList.add('light-mode');
+        themeToggle.textContent = '☀️'; // Ícone para desativar o modo claro
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const startDateInput = document.getElementById('start-date');
+    const endDateInput = document.getElementById('end-date');
+    const applyDateFilterButton = document.getElementById('apply-date-filter');
+
+    applyDateFilterButton.addEventListener('click', () => {
+        const startDate = startDateInput.value ? new Date(startDateInput.value) : null;
+        const endDate = endDateInput.value ? new Date(endDateInput.value) : null;
+
+        const rows = document.querySelectorAll('#chamados-table tbody tr');
+        rows.forEach(row => {
+            const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
+            const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
+            const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
+
+            const matchesDate = (!startDate || rowDate >= startDate) &&
+                                (!endDate || rowDate <= endDate);
+
+            row.style.display = matchesDate ? '' : 'none';
+        });
+
+        updateCounter(); // Atualiza o contador de resultados
+    });
+});
+
+document.getElementById('export-excel').addEventListener('click', () => {
+    const table = document.getElementById('chamados-table');
+    const rows = Array.from(table.querySelectorAll('tr')).filter(row => row.style.display !== 'none')
+        .map(row => Array.from(row.cells).map(cell => cell.textContent.trim()));
+
+    const worksheet = XLSX.utils.aoa_to_sheet(rows);
+
+    // Adicionar estilo de tabela
+    const range = XLSX.utils.decode_range(worksheet['!ref']);
+    for (let C = range.s.c; C <= range.e.c; ++C) {
+        const cell = worksheet[XLSX.utils.encode_cell({ r: 0, c: C })];
+        if (cell) cell.s = { font: { bold: true }, fill: { fgColor: { rgb: "D9E1F2" } } }; // Cabeçalhos
+    }
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Chamados');
+
+    // Aplicar estilo de tabela
+    worksheet['!cols'] = rows[0].map(() => ({ wpx: 120 })); // Largura das colunas
+    worksheet['!rows'] = rows.map(() => ({ hpx: 20 })); // Altura das linhas
+
+    // Obter a data atual no formato YYYY-MM-DD
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // Exportar o arquivo com a data no nome
+    XLSX.writeFile(workbook, `chamados_${currentDate}.xlsx`);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    // Esconde o botão inicialmente
+    backToTopButton.style.display = 'none';
+
+    // Mostra ou esconde o botão ao rolar a página
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Exibe o botão ao rolar mais de 200px
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
 });

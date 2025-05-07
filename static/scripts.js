@@ -1,3 +1,96 @@
+// Define a função updateCounter no escopo global
+const updateCounter = () => {
+    const table = document.getElementById('chamados-table');
+    const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
+    const resultCounter = document.getElementById('result-counter');
+    if (resultCounter) {
+        resultCounter.textContent = visibleRows.length;
+    }
+};
+
+// Certifique-se de que a função updateRowColors também está acessível
+const updateRowColors = () => {
+    const table = document.getElementById('chamados-table');
+    const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
+    visibleRows.forEach((row, index) => {
+        row.classList.remove('even-row', 'odd-row'); // Remove classes antigas
+        row.classList.add(index % 2 === 0 ? 'even-row' : 'odd-row'); // Adiciona a classe correta
+    });
+};
+
+const table = document.getElementById('chamados-table');
+const headers = table.querySelectorAll('th');
+const idFilter = document.getElementById('id-filter');
+const statusCheckboxes = document.querySelectorAll('.status-checkbox');
+
+const applyFilters = () => {
+    const idValue = idFilter.value.trim().toLowerCase();
+    const selectedStatuses = Array.from(statusCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    const headerFilters = Array.from(headers).map(header => {
+        const input = header.querySelector('input');
+        return input ? input.value.trim().toLowerCase() : '';
+    });
+
+    // Obter os valores do filtro de data
+    const startDateInput = document.getElementById('start-date');
+    const endDateInput = document.getElementById('end-date');
+    const startDate = startDateInput.value ? new Date(startDateInput.value) : null;
+    const endDate = endDateInput.value ? new Date(endDateInput.value) : null;
+
+    const rows = table.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const idCell = row.cells[0].textContent.trim().toLowerCase();
+        const statusCell = row.cells[1].textContent.trim().toLowerCase();
+        const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
+        const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
+        const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
+
+        const matchesId = idValue ? idCell.includes(idValue) : true; // Verifica se o ID contém o valor
+        const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(statusCell);
+
+        // Ajuste para múltiplos valores no filtro do cabeçalho
+        const matchesHeaderFilters = Array.from(row.cells).every((cell, index) => {
+            const filterValue = headerFilters[index];
+            if (!filterValue) return true;
+
+            // Dividir o filtro em múltiplos valores (separados por vírgula, ponto e vírgula ou barra)
+            const filterValues = filterValue.split(/[,;/]+/).map(value => value.trim().toLowerCase());
+
+            // Verifica se o filtro é de exclusão (começa com "!")
+            const isExclusion = filterValues.some(filterValue => filterValue.startsWith('!'));
+
+            // Remove o "!" dos valores de exclusão
+            const normalizedFilterValues = filterValues.map(filterValue =>
+                filterValue.startsWith('!') ? filterValue.slice(1) : filterValue
+            );
+
+            // Verifica se há correspondência
+            const match = normalizedFilterValues.some(filterValue => cell.textContent.toLowerCase().includes(filterValue));
+
+            // Aplica a lógica de inclusão ou exclusão
+            return isExclusion ? !match : match;
+        });
+
+        // Verifica se a linha corresponde ao filtro de data
+        const matchesDate = (!startDate || rowDate >= startDate) &&
+                            (!endDate || rowDate <= endDate);
+
+        // Aplica todos os filtros
+        if (matchesId && matchesStatus && matchesHeaderFilters && matchesDate) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    // Atualiza o contador e as cores das linhas visíveis
+    updateCounter();
+    updateRowColors();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('chamados-table');
     if (!table) {
@@ -27,57 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         rows.forEach(row => table.querySelector('tbody').appendChild(row));
         updateCounter(); // Atualiza o contador após a ordenação
         updateRowColors();
-    };
-
-    // Função para atualizar o contador de resultados
-    const updateCounter = () => {
-        const table = document.getElementById('chamados-table');
-        const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
-        const resultCounter = document.getElementById('result-counter');
-        if (resultCounter) {
-            resultCounter.textContent = visibleRows.length;
-        }
-    };
-   
-    const applyFilters = () => {
-        const idValue = idFilter.value.trim().toLowerCase();
-        const selectedStatuses = Array.from(statusCheckboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value.toLowerCase());
-
-        const headerFilters = Array.from(headers).map(header => {
-            const input = header.querySelector('input');
-            return input ? input.value.trim().toLowerCase() : '';
-        });
-
-        const rows = table.querySelectorAll('tbody tr');
-        rows.forEach(row => {
-            const idCell = row.cells[0].textContent.trim().toLowerCase();
-            const statusCell = row.cells[1].textContent.trim().toLowerCase();
-
-            const matchesId = idValue ? idCell === idValue : true; // Exato se não estiver vazio
-            const matchesStatus = selectedStatuses.length === 0 || selectedStatuses.includes(statusCell);
-            const matchesHeaderFilters = Array.from(row.cells).every((cell, index) => {
-                const filterValue = headerFilters[index];
-                return !filterValue || cell.textContent.toLowerCase().includes(filterValue);
-            });
-
-            if (idValue) {
-                row.style.display = matchesId ? '' : 'none';
-            } else {
-                row.style.display = matchesStatus && matchesHeaderFilters ? '' : 'none';
-            }
-        });
-        updateCounter();
-        updateRowColors();
-    };    
-
-    const updateRowColors = () => {
-        const visibleRows = Array.from(table.querySelectorAll('tbody tr')).filter(row => row.style.display !== 'none');
-        visibleRows.forEach((row, index) => {
-            row.classList.toggle('even-row', index % 2 === 0);
-            row.classList.toggle('odd-row', index % 2 !== 0);
-        });
     };
 
     idFilter.addEventListener('input', applyFilters);
@@ -217,21 +259,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const cell = row.cells[index];
             const cellText = cell.textContent.toLowerCase().trim();
 
-            // Verifica se qualquer valor do filtro está presente na célula
-            const match = filterValues.some(filterValue => cellText.includes(filterValue));
-        
-            // Mostra ou esconde a linha com base no resultado da filtragem
-            row.style.display = match ? '' : 'none';
+            // Verifica se o filtro é de exclusão (começa com "!")
+            const isExclusion = filterValues.some(filterValue => filterValue.startsWith('!'));
+
+            // Remove o "!" dos valores de exclusão
+            const normalizedFilterValues = filterValues.map(filterValue =>
+                filterValue.startsWith('!') ? filterValue.slice(1) : filterValue
+            );
+
+            // Verifica se há correspondência
+            const match = normalizedFilterValues.some(filterValue => cellText.includes(filterValue));
+
+            // Aplica a lógica de inclusão ou exclusão
+            if (isExclusion) {
+                row.style.display = match ? 'none' : ''; // Oculta as linhas que correspondem
+            } else {
+                row.style.display = match ? '' : 'none'; // Mostra apenas as linhas que correspondem
+            }
         });
+
         updateCounter(); // Atualiza o contador após o filtro
         updateRowColors();
-        applyFilters();
+        applyFilters(); 
     };
 
     headers.forEach((header, index) => {
         const filterInput = document.createElement('input');
         filterInput.type = 'text';
-        filterInput.placeholder = `Filtrar ${header.textContent}`;
+        filterInput.placeholder = `Filtrar`;
+        //filterInput.placeholder = `Filtrar ${header.textContent}`;
 
         if (header.textContent === 'ID') {
             filterInput.classList.add('id-filter');
@@ -344,15 +400,24 @@ document.addEventListener('DOMContentLoaded', () => {
         calcularResumos();
     });
 
-    // Add event listener to the "Close" button to close the modal
-    document.getElementById('close-resumo').addEventListener('click', () => {
-        document.getElementById('resumo-modal').style.display = 'none';
-    });
+    const closeResumoButton = document.getElementById('close-resumo');
+    if (closeResumoButton) {
+        closeResumoButton.addEventListener('click', () => {
+            document.getElementById('resumo-modal').style.display = 'none';
+        });
+    } else {
+        console.warn("Elemento 'close-resumo' não encontrado.");
+    }
 
     // Add event listener to the "Filter" button to apply filters
-    document.getElementById('filter-button').addEventListener('click', () => {
-        calcularResumos(true);
-    });
+    const filterButton = document.getElementById('filter-button');
+    if (filterButton) {
+        filterButton.addEventListener('click', () => {
+            calcularResumos(true);
+        });
+    } else {
+        console.warn("Elemento 'filter-button' não encontrado.");
+    }
 });
 
 function calcularResumos(filtrarPorData = false) {
@@ -360,6 +425,7 @@ function calcularResumos(filtrarPorData = false) {
     const resumoPorSetor = {};
     const resumoPorFilial = {};
     const resumoPorStatus = {};
+    const resumoPorAssunto = {};
     const isDesenvolvimento = document.body.getAttribute('data-is-desenvolvimento') === 'true';
 
     // Get start and end dates
@@ -393,6 +459,7 @@ function calcularResumos(filtrarPorData = false) {
         if (matchesDate && matchesResumoStatus) {
             const setor = row.cells[5].textContent.trim();
             const filial = row.cells[4].textContent.trim();
+            const tipo = row.cells[8].textContent.trim();
 
             if (status) {
                 resumoPorStatus[status] = (resumoPorStatus[status] || 0) + 1;
@@ -402,6 +469,9 @@ function calcularResumos(filtrarPorData = false) {
             }
             if (filial) {
                 resumoPorFilial[filial] = (resumoPorFilial[filial] || 0) + 1;
+            }    
+            if (tipo) {
+                resumoPorAssunto[tipo] = (resumoPorAssunto[tipo] || 0) + 1;    
             }
         }
     });
@@ -410,6 +480,7 @@ function calcularResumos(filtrarPorData = false) {
     const sortedStatus = Object.entries(resumoPorStatus).sort((a, b) => b[1] - a[1]);
     const sortedSetor = Object.entries(resumoPorSetor).sort((a, b) => b[1] - a[1]);
     const sortedFilial = Object.entries(resumoPorFilial).sort((a, b) => b[1] - a[1]);
+    const sortedAssunto = Object.entries(resumoPorAssunto).sort((a, b) => b[1] - a[1]);
 
     let resumoContent = "";
 
@@ -428,6 +499,10 @@ function calcularResumos(filtrarPorData = false) {
     resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Código Filial</h3><ul>";
     sortedFilial.forEach(([filial, count]) => {
         resumoContent += `<li>${filial}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Assunto</h3><ul>";
+    sortedAssunto.forEach(([tipo, count]) => {
+        resumoContent += `<li>${tipo}: ${count}</li>`;
     });
     resumoContent += "</ul></div>";
 
@@ -465,29 +540,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+const applyDateFilterButton = document.getElementById('apply-date-filter');
+
+applyDateFilterButton.addEventListener('click', () => {
     const startDateInput = document.getElementById('start-date');
     const endDateInput = document.getElementById('end-date');
-    const applyDateFilterButton = document.getElementById('apply-date-filter');
 
-    applyDateFilterButton.addEventListener('click', () => {
-        const startDate = startDateInput.value ? new Date(startDateInput.value) : null;
-        const endDate = endDateInput.value ? new Date(endDateInput.value) : null;
+    // Obtenha os valores das datas
+    const startDate = startDateInput.value ? new Date(startDateInput.value) : null;
+    const endDate = endDateInput.value ? new Date(endDateInput.value) : null;
 
-        const rows = document.querySelectorAll('#chamados-table tbody tr');
-        rows.forEach(row => {
-            const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
-            const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
-            const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
+    const rows = document.querySelectorAll('#chamados-table tbody tr');
+    rows.forEach(row => {
+        const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
+        const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
+        const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
 
-            const matchesDate = (!startDate || rowDate >= startDate) &&
-                                (!endDate || rowDate <= endDate);
+        // Verifica se a linha corresponde ao filtro de data
+        const matchesDate = (!startDate || rowDate >= startDate) &&
+                            (!endDate || rowDate <= endDate);
 
-            row.style.display = matchesDate ? '' : 'none';
-        });
-
-        updateCounter(); // Atualiza o contador de resultados
+        // Aplica o filtro de data
+        row.style.display = matchesDate ? '' : 'none';
     });
+
+    // Atualiza o contador e as cores das linhas visíveis
+    updateCounter();
+    updateRowColors();
+    applyFilters();    
 });
 
 document.getElementById('export-excel').addEventListener('click', () => {
@@ -532,4 +612,106 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTopButton.style.display = 'none';
         }
     });
+});
+
+const resumoFilterButton = document.getElementById('resumo-filter-button');
+
+resumoFilterButton.addEventListener('click', () => {
+    const resumoStartDateInput = document.getElementById('resumo-start-date');
+    const resumoEndDateInput = document.getElementById('resumo-end-date');
+
+    // Obtenha os valores das datas
+    const resumoStartDate = resumoStartDateInput.value ? new Date(resumoStartDateInput.value) : null;
+    const resumoEndDate = resumoEndDateInput.value ? new Date(resumoEndDateInput.value) : null;
+
+    console.log({ resumoStartDate, resumoEndDate }); // Log para depuração
+    // Adicione a lógica de filtro para o modal, se necessário
+});
+
+// Função para aplicar filtros no resumo
+const applyResumoFilters = () => {
+    const resumoStartDateInput = document.getElementById('resumo-start-date');
+    const resumoEndDateInput = document.getElementById('resumo-end-date');
+    const resumoStartDate = resumoStartDateInput.value ? new Date(resumoStartDateInput.value) : null;
+    const resumoEndDate = resumoEndDateInput.value ? new Date(resumoEndDateInput.value) : null;
+
+    const resumoStatusCheckboxes = document.querySelectorAll('.summary-status-checkbox');
+    const selectedResumoStatuses = Array.from(resumoStatusCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value.toLowerCase());
+
+    const rows = document.querySelectorAll('#chamados-table tbody tr');
+    const resumoPorSetor = {};
+    const resumoPorFilial = {};
+    const resumoPorStatus = {};
+    const resumoPorAssunto = {};
+
+    rows.forEach(row => {
+        const dateText = row.cells[2].textContent.trim(); // Coluna de data_abertura
+        const [day, month, year] = dateText.split('/'); // Supondo formato DD/MM/YYYY
+        const rowDate = new Date(`${year}-${month}-${day}`); // Converter para formato YYYY-MM-DD
+        const status = row.cells[1].textContent.trim().toLowerCase();
+        const setor = row.cells[5].textContent.trim();
+        const filial = row.cells[4].textContent.trim();
+        const tipo = row.cells[8].textContent.trim();
+
+        console.log({ dateText, rowDate, resumoStartDate, resumoEndDate }); // Log para depuração
+
+        // Verifica se a linha corresponde aos filtros de data e status
+        const matchesDate = (!resumoStartDate || rowDate >= resumoStartDate) &&
+                            (!resumoEndDate || rowDate <= resumoEndDate);
+        const matchesResumoStatus = selectedResumoStatuses.length === 0 || selectedResumoStatuses.includes(status);
+
+        // Aplica os filtros
+        if (matchesDate && matchesResumoStatus) {
+            if (status) {
+                resumoPorStatus[status] = (resumoPorStatus[status] || 0) + 1;
+            }
+            if (setor) {
+                resumoPorSetor[setor] = (resumoPorSetor[setor] || 0) + 1;
+            }
+            if (filial) {
+                resumoPorFilial[filial] = (resumoPorFilial[filial] || 0) + 1;
+            }
+            if (tipo) {
+                resumoPorAssunto[tipo] = (resumoPorAssunto[tipo] || 0) + 1;
+            }
+        }
+    });
+
+    // Atualizar o conteúdo do resumo
+    const sortedStatus = Object.entries(resumoPorStatus).sort((a, b) => b[1] - a[1]);
+    const sortedSetor = Object.entries(resumoPorSetor).sort((a, b) => b[1] - a[1]);
+    const sortedFilial = Object.entries(resumoPorFilial).sort((a, b) => b[1] - a[1]);
+    const sortedAssunto = Object.entries(resumoPorAssunto).sort((a, b) => b[1] - a[1]);
+
+    let resumoContent = "<div class='resumo-column'><h3>Resumo por Status</h3><ul>";
+    sortedStatus.forEach(([status, count]) => {
+        resumoContent += `<li>${status}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Setor</h3><ul>";
+    sortedSetor.forEach(([setor, count]) => {
+        resumoContent += `<li>${setor}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Código Filial</h3><ul>";
+    sortedFilial.forEach(([filial, count]) => {
+        resumoContent += `<li>${filial}: ${count}</li>`;
+    });
+    resumoContent += "</ul></div><div class='resumo-column'><h3>Resumo por Assunto</h3><ul>";
+    sortedAssunto.forEach(([tipo, count]) => {
+        resumoContent += `<li>${tipo}: ${count}</li>`;
+    });
+
+    resumoContent += "</ul></div>";
+
+    document.getElementById('resumo-content').innerHTML = resumoContent;
+    document.getElementById('resumo-modal').style.display = 'block';
+};
+
+// Adicionar eventos para os filtros do resumo
+document.getElementById('resumo-filter-button').addEventListener('click', applyResumoFilters);
+
+const resumoStatusCheckboxes = document.querySelectorAll('.summary-status-checkbox');
+resumoStatusCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', applyResumoFilters);
 });
